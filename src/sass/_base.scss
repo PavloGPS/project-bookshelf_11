@@ -1,0 +1,26 @@
+// Шрифт
+@font-face {
+    font-family: "DM sans";
+    src: url("fonts/DMSans-Regular.woff2"), url("fonts/DMSans-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM sans";
+    src: url("fonts/DMSans-Medium.woff2"), url("fonts/DMSans-Medium.woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM sans";
+    src: url("fonts/DMSans-Bold.woff2"), url("fonts/DMSans-Bold.woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+// Скидання
