@@ -1,0 +1,1 @@
+import {fundationsArr} from "./foundations-array.js";

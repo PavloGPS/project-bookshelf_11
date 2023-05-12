@@ -1,0 +1,10 @@
+// solve flexbasis 
+// вираховує ширину флекс-елемента 
+// example of initiation:
+// приклад застосування:
+// @include flexbasis(4,30px);
+// where 4= quantity of elements ; 30px space between elements (or gap) 
+// де 4= кількість елементів в рядку ; 30px = відстань між елементами (тобто проміжок) 
+@mixin flexbasis($amount, $gap) {
+    flex-basis: calc((100% - (($amount - 1) * $gap)) / $amount);
+  }

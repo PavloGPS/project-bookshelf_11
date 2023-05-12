@@ -1,0 +1,118 @@
+
+@font-face {
+    font-family: "DM sans";
+    src: url("../fonts/DMSans-Regular.woff2"), url("../fonts/DMSans-Regular.woff");
+    // src: url("./fonts/"), url("fonts/DMSans-Regular.woff");
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM sans";
+    src: url("../fonts/DMSans-Medium.woff2"), url("../fonts/DMSans-Medium.woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "DM sans";
+    src: url("../fonts/DMSans-Bold.woff2"), url("../fonts/DMSans-Bold.woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'DM sans', sans-serif;
+    background-color: $section-background;
+
+}
+
+body.modal-open {
+    overflow: hidden;
+}
+/* Скидання стилів */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 0;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    transition: $timing-function;
+
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+
+    @media screen and (max-width: 319.5px) {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    @media screen and (min-width: 320px) {
+        width: 320px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    @media screen and (min-width: 768px) {
+        width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    @media screen and (min-width: 1200px) {
+        width: 1200px;
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+}
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.scroll-hidden {
+    overflow: hidden;
+}

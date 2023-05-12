@@ -1,0 +1,13 @@
+import './js/start-popup';
+import './js/authorization';
+import './js/header';
+import './js/user-bar';
+import './js/burger-menu';
+import './js/theme-toggle';
+import './js/categories';
+import './js/support';
+import './js/swiper';
+import './js/categories-render';
+import './js/loader';
+import './js/modal_window';
+import './js/scroll-up';
