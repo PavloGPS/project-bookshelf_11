@@ -1,0 +1,8 @@
+.site-nav__list{
+    display: flex;
+    gap:50;
+}
+.site-nav__item a{
+    background-color: $third-color;
+    color: #546cae;
+}
