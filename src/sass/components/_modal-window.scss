@@ -34,7 +34,8 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .modal-close::before {
