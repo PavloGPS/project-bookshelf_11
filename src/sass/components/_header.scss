@@ -131,6 +131,13 @@ gap: 76px;
           color: rgba(17, 17, 17, 1);
           background-color: $third-color;
         }
+
+        .burger{
+         fill: rgba(255, 255, 255, 1);
+        }
+        .bag{
+          fill: rgba(255, 255, 255, 1);
+        }
       }
     
     .theme-switch {
@@ -190,6 +197,11 @@ gap: 76px;
           border-radius: 50%;
           
         }
+      }
+
+      .menu-btn{
+       background-color: transparent;
+       border: none;
       }
 
 
