@@ -21,7 +21,7 @@ serviceDetailInfo('643282b1e85766588626a087')
         console.log(shoppingList);
         shoppingList.push(data);
         localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
-        instance.close();
+        
       } else {
         const idx = shoppingList.findIndex(({ id }) => id === bookID);
         shoppingList.splice(idx, 1);

@@ -1,13 +1,13 @@
-import {shooingListArr} from './fake-shoping-list.js';
+// import {shoppingListArr} from '/fake-shoping-list.js';
 
-//наполнение localStorage
-const loсalShoppingList = document.querySelector('.localStorage');
-localShoppingList.addEventListener('click', onLocalShoppingList);
+// //наполнение localStorage
+// const loсalShoppingList = document.querySelector('.localStorage');
+// localShoppingList.addEventListener('click', onLocalShoppingList);
 
-function onLocalShoppingList(evt) {
-  localStorage.setItem('local', JSON.stringify(loсalShoppingList));
-//   console.log(JSON.parse(localStorage.getItem('localShoppingList')));
-}
+// function onLocalShoppingList(evt) {
+//   localStorage.setItem('local', JSON.stringify(loсalShoppingList));
+// //   console.log(JSON.parse(localStorage.getItem('localShoppingList')));
+// }
 
 const shoppingList =
   JSON.parse(localStorage.getItem('loсalShoppingList')) || [];

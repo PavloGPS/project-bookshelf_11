@@ -1,4 +1,4 @@
-export const shopingListArr = [
+export const shoppingListArr = [
   {
     _id: '642fd89ac8cf5ee957f12361',
     list_name: 'Middle Grade Paperback Monthly',
