@@ -1,5 +1,5 @@
 export{fundatiionsArr};
-fundatiionsArr=[
+const fundatiionsArr=[
     {
       title: 'Save the Children',
       url:
