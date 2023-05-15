@@ -7,14 +7,31 @@ async function serviceDetailInfo(id) {
   return response.json();
 }
 
-serviceDetailInfo("643282b1e85766588626a087")
-    .then((data) => {
-        const instance = new Modal();
-instance.create(createBookMurkup(data));
-instance.open();
-        console.log(data)
-    })
-  .catch((error) => console.log(error));
+serviceDetailInfo('643282b1e85766588626a087')
+  .then(data => {
+    const instance = new Modal();
+    instance.create(createBookMurkup(data));
+    instance.open();
+    const modalControlBTN = document.querySelector('.add-to-cart-btn');
+    modalControlBTN.addEventListener('click', e => {
+      const bookID = e.target.dataset.id;
+      const shoppingList =
+        JSON.parse(localStorage.getItem('localShoppingList')) || [];
+      if (e.target.dataset.action === "add") {
+        console.log(shoppingList);
+        shoppingList.push(data);
+        localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
+        instance.close();
+      } else {
+        const idx = shoppingList.findIndex(({ id }) => id === bookID);
+        shoppingList.splice(idx, 1);
+        localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
+        
+      }
+    
+    });
+  })
+  .catch(error => console.log(error));
 
 class Modal {
   constructor() {
@@ -23,8 +40,8 @@ class Modal {
   create(murkup) {
     const html = `<div class="overlay js-module-overlay">
       <div class="modal-wrapper js-close">
-        <div class="modal">
-          <div class="modal-close js-close"></div>
+        <div class="modal">          
+          <button type="button" class="modal-close js-close"></button>
           <div class="modal-content">
           ${murkup}
           </div>
@@ -40,37 +57,37 @@ class Modal {
       return;
     }
     this.visible = true;
-    const body = document.querySelector("body");
-    body.insertAdjacentHTML("afterbegin", this.html);
-    this.#close();
+    const body = document.querySelector('body');
+    body.insertAdjacentHTML('afterbegin', this.html);
+    this.close();
   }
 
-  #close() {
-      const overlay = document.querySelector(".js-module-overlay");
-      this.cleanerEscape = this.#hendlerEscape.bind(this);
-      this.cleanerClick = this.#hendlerClick.bind(this);
-    overlay.addEventListener("click", this.cleanerClick);
-    document.addEventListener("keydown", this.cleanerEscape);
+  close() {
+    const overlay = document.querySelector('.js-module-overlay');
+    this.cleanerEscape = this.hendlerEscape.bind(this);
+    this.cleanerClick = this.hendlerClick.bind(this);
+    overlay.addEventListener('click', this.cleanerClick);
+    document.addEventListener('keydown', this.cleanerEscape);
   }
-  #hendlerClick(e) {
-    if (!e.target.classList.contains("js-close")) {
+  hendlerClick(e) {
+    if (!e.target.classList.contains('js-close')) {
       return;
     }
-      e.currentTarget.remove();
-    this.#cleanEvent();
+    e.currentTarget.remove();
+    this.cleanEvent();
   }
 
-  #hendlerEscape(e) {
-    if (e.code === "Escape") {
-      const overlay = document.querySelector(".js-module-overlay");
-        overlay.remove();
-        this.#cleanEvent();
+  hendlerEscape(e) {
+    if (e.code === 'Escape') {
+      const overlay = document.querySelector('.js-module-overlay');
+      overlay.remove();
+      this.cleanEvent();
     }
-    }
-    
-  #cleanEvent() {
-      document.removeEventListener("keydown", this.cleanerEscape);
-      this.visible = false;
+  }
+
+  cleanEvent() {
+    document.removeEventListener('keydown', this.cleanerEscape);
+    this.visible = false;
   }
 }
 
@@ -81,9 +98,17 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
       <img src="${book_image}" width="192"  height="281" alt="${title}" />
       <h2>${title}</h2>
       <p>${author}</p>
-      <span>${description ? description : "We are sorry, we have no description of this book."}</span>
+      <span>${
+        description
+          ? description
+          : 'We are sorry, we have no description of this book.'
+      }</span>
       
-      <button data-id="${_id}" type="button">${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'}</button>
+      <button data-id="${_id}" data-action="${
+    isInShoppingList ? 'remove' : 'add'
+  }" type="button" class="add-to-cart-btn js-close">${
+    isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'
+  }</button>
   </div>`;
 }
 
