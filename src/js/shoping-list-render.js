@@ -4,7 +4,7 @@ import {shooingListArr} from './fake-shoping-list.js';
 const loсalShoppingList = document.querySelector('.localStorage');
 localShoppingList.addEventListener('click', onLocalShoppingList);
 
-function onLokaleShopingList(evt) {
+function onLocalShoppingList(evt) {
   localStorage.setItem('local', JSON.stringify(loсalShoppingList));
 //   console.log(JSON.parse(localStorage.getItem('localShoppingList')));
 }
