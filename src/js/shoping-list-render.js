@@ -1,16 +1,16 @@
 import {shooingListArr} from './fake-shoping-list.js';
 
 //наполнение localStorage
-const lokaleShopingList = document.querySelector('.localStorage');
-lokaleShopingList.addEventListener('click', onLokaleShopingList);
+const loсalShoppingList = document.querySelector('.localStorage');
+localShoppingList.addEventListener('click', onLocalShoppingList);
 
 function onLokaleShopingList(evt) {
-  localStorage.setItem('local', JSON.stringify(lokaleShopingList));
-//   console.log(JSON.parse(localStorage.getItem('lokaleShopingList')));
+  localStorage.setItem('local', JSON.stringify(loсalShoppingList));
+//   console.log(JSON.parse(localStorage.getItem('localShoppingList')));
 }
 
 const shoppingList =
-  JSON.parse(localStorage.getItem('lokaleShopingList')) || [];
+  JSON.parse(localStorage.getItem('loсalShoppingList')) || [];
 
 const bookListEl = document.querySelector('.book-list');
 if (shoppingList.length > 0) {
