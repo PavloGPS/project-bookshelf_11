@@ -1,7 +1,7 @@
 <header class="header">  
   <div class="container">
     <include src="./partials/user-bar.html"></include>
-    <include src="./partials/site-navigation.html"></include>
+    
     <div class="header-nav">
       <a class="logo" href="./index.html">
         <svg class="logo-img" width="24px" height="24px">
@@ -9,21 +9,8 @@
         </svg>
         <h1 class="logo-text">Bookshelf</h1>
       </a>
-      <ul class="home-nav">
-        <li class="nav-item">
-          <button type="button" class="nav-btn" data-page="home-list">home</button>
-        </li>
-        <li class="nav-item">
-          
-            <button type="button" class="shpng-list-btn" data-page="shpng-list">
-              Shopping list
-              <svg class=" shpng-list-logo" width="13px" height="17px">
-                <use href="./images/sprite.svg#"></use>
-              </svg>
-            </button>
-         
-        </li>
-      </ul>
+      <include src="./partials/site-navigation.html"></include>
+      
     </div>
       <div class="switch-auth">
         <div class="theme-switch-wr">
@@ -36,11 +23,13 @@
      
 
       <button class="menu-btn js-open-menu">
-        <svg width="28px" height="28px"></svg>
+        <svg  width="28px" height="28px">
+          <use href="./images/sprite.svg#burger"></use>
+        </svg>
+        
       </button>
     </div>
   </div>
   <include src="./partials/burger-menu.html"></include>
 </header>
-
 
