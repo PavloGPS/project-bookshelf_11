@@ -1,0 +1,102 @@
+.book-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+
+  width: 704px;
+  height: 213px;
+  left: 32px;
+  top: 204px;
+
+  background: #FFFFFF;
+  border: 2px solid rgba(79, 46, 232, 0.4);
+  border-radius: 16px;
+}
+
+.book-img {
+  width: 116px;
+  height: 165px;
+
+  margin: 24px;
+}
+
+.book-cover {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.book-text {
+  flex: 1;
+}
+
+.remove-book {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+//   background-image: ('')
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.book-title,
+.book-category,
+.book-description,
+.book-author {
+  margin: 0;
+}
+
+.book-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-category {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.book-description {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.book-author {
+  font-size: 14px;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.book-links {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+.book-links li {
+  list-style: none;
+  margin-right: 10px;
+}
+
+.book-links li:last-child {
+  margin-right: 0;
+}
+
+.link-image a {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-image: ('');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 100%;
+}
+
+.link-image a:hover {
+  opacity: 0.8;
+}
