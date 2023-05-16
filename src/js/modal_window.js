@@ -96,13 +96,13 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
   const isInShoppingList = shoppingList.some(item => item._id === _id);
   return `<div class="modal-container">
-      <img src="${book_image}" width="192"  height="281" alt="${title}" />
-      <h2 class="modal-title">${title}</h2>
+      <img src="${book_image}" width="287"  height="408" alt="${title}" />
+      <div class="book-details"><h2 class="modal-title">${title}</h2>
       <p class="author">${author}</p>
-      <span class="description">${description
+      <p class="description">${description
       ? description
       : 'We are sorry, we have no description of this book.'
-    }</span>
+    }</p></div>
 
   <ul class="platforms">
   <li>
