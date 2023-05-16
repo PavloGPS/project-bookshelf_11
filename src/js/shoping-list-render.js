@@ -1,4 +1,5 @@
-const shoppingList = JSON.parse(localStorage.getItem("localShoppingList")) || [];
+const shoppingList =
+  JSON.parse(localStorage.getItem('localShoppingList')) || [];
 
 const bookListEl = document.querySelector('.book-list');
 if (shoppingList.length > 0) {
@@ -48,7 +49,7 @@ const removeBookButtons = document.querySelectorAll('.remove-book');
 removeBookButtons.forEach((button, index) => {
   button.addEventListener('click', () => {
     shoppingList.splice(index, 1);
-    localStorage.setItem('loсalShoppingList', JSON.stringify(shoppingList));
+    localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
     button.parentElement.remove();
   });
 });
