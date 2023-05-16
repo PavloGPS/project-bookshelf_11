@@ -1,25 +1,14 @@
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
   const response = await fetch(URL);
+  console.log(response)
   if (!response.ok) {
     throw new Error(response.statusText);
   }
   return response.json();
 }
 
-/* // Отримання всіх елементів книжок
-  const books = document.querySelectorAll('.modal-content');
 
-  // Додавання обробника події кліку до кожної книжки
-  books.forEach(book => {
-    book.addEventListener('click', () => {
-      const bookId = book.getAttribute('data-book-id'); // Отримання id книги з атрибуту data-book-id
-      serviceDetailInfo(bookId)
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
-    });
-  });
- */
 
 serviceDetailInfo('643282b1e85766588626a087')
   .then(data => {
@@ -107,7 +96,7 @@ class Modal {
 
 function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
-  const isInShoppingList = shoppingList.some(item => item._id === _id);
+  const isInShoppingList = shoppingList.some(item => item.id === id);
   return `<div class="modal-container">
       <img src="${book_image}" width="192"  height="281" alt="${title}" />
       <div class="text-container"><h2 class="modal-title">${title}</h2>
