@@ -1,8 +1,8 @@
-import { foundatiionsArr } from './foundations-array.js';
+import {foundatiionsArr} from './foundations-array.js';
 
 const supportList = document.querySelector('ul.list__support');
-const scrollUpBtn = document.querySelector('.scroll-up-btn');
-const scrollDownBtn = document.querySelector('.scroll-down-btn');
+const scrollUpBtn = document.querySelector('.swiper-up-btn');
+const scrollDownBtn = document.querySelector('.swiper-down-btn');
 
 
 scrollUpBtn.addEventListener('click', () => {

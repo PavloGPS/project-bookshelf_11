@@ -1,10 +1,4 @@
-<<<<<<< Updated upstream
-export{fundatiionsArr};
-const fundatiionsArr=[
-=======
-
-foundatiionsArr=[
->>>>>>> Stashed changes
+const foundatiionsArr=[
     {
       title: 'Save the Children',
       url:
@@ -79,4 +73,5 @@ foundatiionsArr=[
       },
     },
   ]
-  export{foundatiionsArr};
+  
+  export { foundatiionsArr };
