@@ -33,6 +33,7 @@ gap: 76px;
     text-decoration: none;
     align-items: center;
     vertical-align: middle;
+    cursor: pointer;
     
 }
 
@@ -47,8 +48,8 @@ gap: 76px;
    .home-nav{
     display: flex;
     list-style: none;
-    align-items: center;
     gap: 24px;
+    align-items: center;
 
     @media screen and (max-width: $tablet) {
      
@@ -59,33 +60,34 @@ gap: 76px;
 
 
 .nav-btn{
-    width: 72px;
-    height: 34px;
-   
-    letter-spacing: -0.04em;
-    text-transform: uppercase;
-    font-weight: 700;
+  //  background-color: $third-color;
+   border-radius: 36px;
+   width: 72px;
+   height: 34px;
   
-    background: transparent;
-    border: none;
-
-     // display: none;
+   cursor: pointer;
+  
     }
+
+  .item-text{
+      letter-spacing: -0.04em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      color: $primary-color;
+      text-align: center;
+      padding-top: 8px;
+    
+  }
 
 
     .shpng-list-btn{   
         width: 156px;
         height: 34px;
-        
-        font-weight: 500;   
-        letter-spacing: -0.04em;
-        text-transform: uppercase;
-       
-        background: transparent;
-        border: none;
-
-        // display: none;
-        
+        border-radius: 36px;
+        // background-color: $third-color;
+        cursor: pointer;
+                
     }
     
 
@@ -99,7 +101,7 @@ gap: 76px;
         border-radius: 36px;
     }
 
- 
+  
 
     // SWITCH THEME
 
@@ -119,6 +121,22 @@ gap: 76px;
         .slider{
             background: linear-gradient(180deg, #4F2EE8 0%, #686868 100%);
             box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .item-text{
+          color:rgba(255, 255, 255, 1);
+        }
+
+        .active{
+          color: rgba(17, 17, 17, 1);
+          background-color: $third-color;
+        }
+
+        .burger{
+         fill: rgba(255, 255, 255, 1);
+        }
+        .bag{
+          fill: rgba(255, 255, 255, 1);
         }
       }
     
@@ -181,6 +199,11 @@ gap: 76px;
         }
       }
 
+      .menu-btn{
+       background-color: transparent;
+       border: none;
+      }
+
 
     .js-open-menu{
         padding: 0;
@@ -191,4 +214,5 @@ gap: 76px;
       } 
     }
 
+   
 

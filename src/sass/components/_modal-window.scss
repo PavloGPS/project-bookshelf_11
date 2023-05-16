@@ -34,7 +34,8 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    cursor: pointer;
+    background-color: transparent;
+    border-color: transparent;
 }
 
 .modal-close::before {
@@ -70,7 +71,7 @@
     flex-wrap: wrap;
 }
 
-.button {
+.btn-modal {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     font-weight: 700;
     font-size: 16px;
