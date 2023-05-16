@@ -7,6 +7,20 @@ async function serviceDetailInfo(id) {
   return response.json();
 }
 
+/* // Отримання всіх елементів книжок
+  const books = document.querySelectorAll('.modal-content');
+
+  // Додавання обробника події кліку до кожної книжки
+  books.forEach(book => {
+    book.addEventListener('click', () => {
+      const bookId = book.getAttribute('data-book-id'); // Отримання id книги з атрибуту data-book-id
+      serviceDetailInfo(bookId)
+        .then(data => console.log(data))
+        .catch(error => console.log(error));
+    });
+  });
+ */
+
 serviceDetailInfo('643282b1e85766588626a087')
   .then(data => {
     const instance = new Modal();
@@ -96,19 +110,38 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
   const isInShoppingList = shoppingList.some(item => item._id === _id);
   return `<div class="modal-container">
       <img src="${book_image}" width="192"  height="281" alt="${title}" />
-      <h2>${title}</h2>
-      <p>${author}</p>
-      <span>${
+      <div class="text-container"><h2 class="modal-title">${title}</h2>
+      <p class="author">${author}</p>
+      <span class="description">${
         description
           ? description
           : 'We are sorry, we have no description of this book.'
       }</span>
-      
-      <button data-id="${_id}" data-action="${
+  </div>
+  <div>
+  <ul class="platforms">
+  <li>
+    <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20" target="_blank" rel="noopener noreferrer nofollow">
+      <img srcset="modal.amazon.png 62w, modal.amazon@2x.png 124w" src="./modal/amazon.png" sizes="(min-width: 1200px) 62px, (min-width: 768px) 62px, (min-width: 480px) 62px, 100vw" alt="Amazon" />
+    </a>
+  </li>
+  <li>
+    <a href="https://goto.applebooks.apple/9780735211292?at=10lIEQ" target="_blank" rel="noopener noreferrer nofollow">
+      <img srcset="modal.book.png 33w, modal.book@2x.png 66w" src="./modal/book.png" sizes="(min-width: 1200px) 33px, (min-width: 768px) 33px, (min-width: 480px) 33px, 100vw" alt="Apple books" />
+    </a>
+  </li>
+  <li>
+    <a href="https://www.anrdoezrs.net/click-7990613-11819508?u…w.barnesandnoble.com%2Fw%2F%3Fean%3D9780735211292" target="_blank" rel="noopener noreferrer nofollow">
+      <img srcset="modal.books.png 38w, modal.books@2x.png 86w" src="./modal/books.png" sizes="(min-width: 1200px) 38px, (min-width: 768px) 38px, (min-width: 480px) 38px, 100vw" alt="Barnes and Noble" />
+    </a>
+  </li>
+</ul>
+  </div>
+  </div>
+     <button data-id="${_id}" data-action="${
     isInShoppingList ? 'remove' : 'add'
   }" type="button" class="add-to-cart-btn js-close">${
     isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'
-  }</button>
-  </div>`;
+  }</button>`;
 }
 
