@@ -5,7 +5,7 @@
 // localShoppingList.addEventListener('click', onLocalShoppingList);
 
 // function onLocalShoppingList(evt) {
-//   localStorage.setItem('local', JSON.stringify(loсalShoppingList));
+//   localStorage.setItem('loсalShoppingList', JSON.stringify(shoppingListArr));
 // //   console.log(JSON.parse(localStorage.getItem('localShoppingList')));
 // }
 
