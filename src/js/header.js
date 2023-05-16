@@ -91,7 +91,7 @@ function onPageHomeBtn(){
 
 document.addEventListener('DOMContentLoaded', function() {
   var mobileMenuToggle = document.querySelector('.js-mobile-menu-toggle');
-  var mobileMenuClose = document.querySelector('.js-mobile-menu-close');
+  var mobileMenuClose = document.querySelector('.js-close-menu');
 
   mobileMenuToggle.addEventListener('click', function() {
     mobileMenuClose.classList.toggle('show');
@@ -100,4 +100,14 @@ document.addEventListener('DOMContentLoaded', function() {
   mobileMenuClose.addEventListener('click', function() {
     mobileMenuClose.classList.remove('show');
   });
+    
+    mobileMenuToggle.addEventListener('click', function() {
+  mobileMenuToggle.classList.add('hidden');
+  mobileMenuClose.classList.remove('hidden');
+});
+
+mobileMenuClose.addEventListener('click', function() {
+  mobileMenuClose.classList.add('hidden');
+  mobileMenuToggle.classList.remove('hidden');
+});
 });

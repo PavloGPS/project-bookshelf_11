@@ -143,6 +143,9 @@ gap: 76px;
         .bag{
           fill: rgba(255, 255, 255, 1);
         }
+        .mob-menu-close-btn {
+          fill: #FFFFFF;
+        }
 
       }
     
@@ -224,15 +227,18 @@ gap: 76px;
     }
     }
         .mob-menu-close-btn {
-          position: absolute;
-          top: 10px;
-          right: 15px;
+          
           display: none;
+          background-color: transparent;
+          border: none;
         }
     
         .mob-menu-close-btn.show {
           display: block;
         }
+    .hidden {
+      display: none;
+    }
 
    
 
