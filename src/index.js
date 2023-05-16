@@ -11,3 +11,4 @@ import './js/categories-render';
 import './js/loader';
 import './js/modal_window';
 import './js/scroll-up';
+import './js/see_more';
