@@ -1,21 +1,25 @@
-import {foundatiionsArr} from './foundations-array.js';
+import { foundatiionsArr } from './foundations-array.js';
+import { throttle } from 'lodash';
 
 const supportList = document.querySelector('ul.list__support');
 const scrollUpBtn = document.querySelector('.swiper-up-btn');
 const scrollDownBtn = document.querySelector('.swiper-down-btn');
 
-
 scrollUpBtn.addEventListener('click', () => {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
-  supportList.scrollTo({ top: supportList.scrollTop - listItemHeight, behavior: 'smooth' });
+  supportList.scrollTo({
+    top: supportList.scrollTop - (listItemHeight * 3 + 16),
+    behavior: 'smooth',
+  });
 });
-
 
 scrollDownBtn.addEventListener('click', () => {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
-  supportList.scrollTo({ top: supportList.scrollTop + listItemHeight, behavior: 'smooth' });
+  supportList.scrollTo({
+    top: supportList.scrollTop + (listItemHeight * 3 + 16),
+    behavior: 'smooth',
+  });
 });
-
 
 function updateScrollButtons() {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
@@ -34,8 +38,7 @@ function updateScrollButtons() {
   }
 }
 
-
-supportList.addEventListener('scroll', updateScrollButtons);
+supportList.addEventListener('scroll', throttle(updateScrollButtons));
 
 foundatiionsArr.forEach(foundation => {
   const listItem = document.createElement('li');
@@ -53,6 +56,5 @@ foundatiionsArr.forEach(foundation => {
   listItem.appendChild(link);
   supportList.appendChild(listItem);
 });
-
 
 updateScrollButtons();
