@@ -80,7 +80,24 @@ function onPageHomeBtn(){
 
 // function activePageShoppingList() {
 
-//   pageShoppingList.classList.toggle('active');  
+//   pageShoppingList.classList.toggle('active');
 //   pageHome.classList.toggle('active');
   
 //   }
+
+
+// -----for close-btn in burger-menu
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  var mobileMenuToggle = document.querySelector('.js-mobile-menu-toggle');
+  var mobileMenuClose = document.querySelector('.js-mobile-menu-close');
+
+  mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuClose.classList.toggle('show');
+  });
+
+  mobileMenuClose.addEventListener('click', function() {
+    mobileMenuClose.classList.remove('show');
+  });
+});
