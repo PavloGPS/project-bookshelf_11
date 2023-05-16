@@ -52,35 +52,35 @@ console.log(window.location.href)
 //   }
 
 
-//4-й вариант
-// pageShoppingList.addEventListener("click", onPageShoppingListClick);
+// 4-й вариант
+pageShoppingList.addEventListener("click", onPageShoppingListClick);
 
 
-// function onPageShoppingListClick(){
-//     colorSwitch = setTimeout(()=>{
-//         pageShoppingList.classList.add('active');
-//         pageHome.classList.remove('active');
-//     },500);
+function onPageShoppingListClick(){
+    colorSwitch = setTimeout(()=>{
+        pageShoppingList.classList.add('active');
+        pageHome.classList.remove('active');
+    },500);
     
-//     pageShoppingList.removeEventListener('click', onPageShoppingListClick)
-//     pageHome.addEventListener('click', onPageHomeBtn)
-// }
-// function onPageHomeBtn(){
-//     colorSwitch = setTimeout(()=>{
-//         pageShoppingList.classList.remove('active');
-//         pageHome.classList.add('active');
-//     },500);
+    pageShoppingList.removeEventListener('click', onPageShoppingListClick)
+    pageHome.addEventListener('click', onPageHomeBtn)
+}
+function onPageHomeBtn(){
+    colorSwitch = setTimeout(()=>{
+        pageShoppingList.classList.remove('active');
+        pageHome.classList.add('active');
+    },500);
     
-//     pageHome.removeEventListener('click', onPageHomeBtn );
-//     document.addEventListener('click', onPageShoppingListClick);
-// }
+    pageHome.removeEventListener('click', onPageHomeBtn );
+    document.addEventListener('click', onPageShoppingListClick);
+}
 // http://localhost:1234/index.html
-//5v
-pageShoppingList.addEventListener('click', activePageShoppingList);
+// //5варіант
+// pageShoppingList.addEventListener('click', activePageShoppingList);
 
-function activePageShoppingList() {
+// function activePageShoppingList() {
 
-  pageShoppingList.classList.toggle('active');  
-  pageHome.classList.toggle('active');
+//   pageShoppingList.classList.toggle('active');  
+//   pageHome.classList.toggle('active');
   
-  }
+//   }
