@@ -7,8 +7,11 @@ console.dir(navHreffsArr);
 navHreffsArr.forEach((navLink) => {
     if (navLink.href===navLink.baseURI) {
         navLink.style.backgroundColor = "#EAC645";
+        navLink.style.color = "#111111";
+        
     } else {
         navLink.style.backgroundColor = "transparent";
+        navLink.style.color = "#FFFFFF";
     }    
 })
 
