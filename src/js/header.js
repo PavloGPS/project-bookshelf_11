@@ -1,11 +1,8 @@
-const logo = document.querySelector('.logo');
-
-// hilighting current page link
+//Hilighting of current pages
 const homeLink = document.querySelector('[data-page="home-list"]');
 const ShoppingListLink = document.querySelector('[data-page="shpng-list"]');
 
 const navHreffsArr = document.querySelectorAll('.js-link');
-
 console.dir(navHreffsArr);
 navHreffsArr.forEach((navLink) => {
     if (navLink.href===navLink.baseURI) {
@@ -16,7 +13,9 @@ navHreffsArr.forEach((navLink) => {
 })
 
 
+
 // -----for close-btn in burger-menu
+
 
 document.addEventListener('DOMContentLoaded', function() {
   var mobileMenuToggle = document.querySelector('.js-mobile-menu-toggle');
@@ -40,4 +39,5 @@ mobileMenuClose.addEventListener('click', function() {
   mobileMenuToggle.classList.remove('hidden');
 });
 });
+
 
