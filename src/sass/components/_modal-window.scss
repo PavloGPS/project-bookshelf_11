@@ -5,24 +5,28 @@
     /* opacity: 0.2; */
     z-index: 100;
     position: fixed;
+    /* visibility: hidden; */
 }
+
 
 .modal {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 335px;
-    min-height: 100%;
+    padding: 40px 24px;
+    width: 287px;
+    height: 100%;
     z-index: 300;
     background-color: #fff;
     position: relative;
     opacity: 1;
     border: 2px solid #111111;
     border-radius: 18px;
+    /* visibility: hidden; */
 
     @media screen and (min-width: $tablet) {
             width: 579px;
-            bottom: 465px;
+            height: 465px;
         }
 
 }
@@ -32,6 +36,7 @@
     width: 100%;
     height: 100%;
     z-index: 200;
+    
 }
 
 .modal-close {
@@ -46,35 +51,46 @@
 
 .modal-close::before {
     height: 2px;
-    width: 22px;
+    width: 14px;
     background-color: black;
     content: "";
     position: absolute;
-    top: 14px;
-    left: 4px;
+    top: 1px;
+    left: 20px;
     transform: rotate(45deg);
+
+    @media screen and (min-width: $tablet) {
+        width: 22px;
+        top: 14px;
+        left: 4px;
+    }
 }
 
 .modal-close::after {
     height: 2px;
-    width: 22px;
+    width: 14px;
     background-color: black;
     content: "";
     position: absolute;
-    top: 14px;
-    left: 4px;
+    top: 1px;
+    left: 20px;
     transform: rotate(135deg);
+
+    @media screen and (min-width: $tablet) {
+            width: 22px;
+            top: 14px;
+            left: 4px;
+        }
 }
 
-.modal-content {
-    width: 287px;
-    height: 408px;
-    padding: 40px 40px;
-}
 
 .modal-container {
    display: flex;
-
+   flex-direction: column;
+align-items: center;
+   @media screen and (min-width: $tablet) {
+    flex-direction: row;
+   }
 }
 
 .add-to-cart-btn {
@@ -95,9 +111,9 @@
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.hero-button:hover,
-.hero-button:focus {
-    background-color: var(--btn-background-color);
+.add-to-cart-btn:hover,
+.add-to-cart-btn:focus {
+    background-color: $support-gradient;
 }
 
 .modal-title{
@@ -105,4 +121,29 @@
         font-size: 16px;
         line-height: calc(18px / 16px);
      color: $primary-color;
+}
+
+.author {
+    font-weight: 400;
+        font-size: 12px;
+        line-height: calc(14px / 12px);
+        letter-spacing: -0.04em;
+        color: $subtitle-color;
+}
+
+.description {
+    font-weight: 400;
+        font-size: 14px;
+        line-height: calc (18px / 14px);
+        letter-spacing: -0.04em;
+        color: $primary-color;
+}
+
+.book-details {
+    padding: 14px;
+}
+
+.platforms {
+    margin-bottom: 20px;
+    display: flex;
 }
