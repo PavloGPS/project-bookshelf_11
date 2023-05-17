@@ -9,6 +9,10 @@
     }
 }
 
+.wrapper {
+    flex-direction: column;
+}
+
 
 .overlay {
     width: 100%;
@@ -163,7 +167,7 @@
 }
 
 .platform-list {
-    
+
 }
 
 .platforms {
