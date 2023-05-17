@@ -1,13 +1,13 @@
 import axios from "axios";
-import { listTopBooks } from './categories-render'
+import { listTopBooks } from './categories-render.js'
 import { markupCollections} from './categories-render'
-import { fetchTopBooks } from "./categories-render";
-
+import { fetchTopBooks } from "./categories-render.js";
+import{BAZA_URL} from './categories-render.js'
 const galleryList = document.querySelector('.gallery');
 const  categoryList = document.querySelector('.category_list');
 const baseUrl = 'https://books-backend.p.goit.global/books/';
 const allCategories = document.querySelector('.all_categories')
-const allItems=''
+const allItems="All categories"
 async function fetchCategories() {
   try {
     const { data } = await axios(`${baseUrl}category-list`);
@@ -40,25 +40,29 @@ async function fetchBooksByCategory(category) {
 (async () => {
   try {
     const categories = await fetchCategories();
-    const listItems = categories.map(category => `<li class='item'><a class='allCategories'href="#">${category}</a></li>`);
-    const allItems="All categories"
+    const listItems = categories.map(category => `<li class='item'><a class='allCategories' href="#">${category}</a></li>`);
+    
     galleryList.innerHTML = `<ul><li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}</ul>`;
   } catch (error) {
     console.error('Помилка:', error);
   }
-})();
+  const linkAllcategories = galleryList.querySelector('.allCategories');
 
+ linkAllcategories.addEventListener('click', (event) => {
+  fetchTopBooks(BAZA_URL, listTopBooks);
+});
+})();
+const linkAllcategories=galleryList.querySelector('.allCategories')
+console.log(linkAllcategories)
 galleryList.addEventListener('click', async (event) => {
   if (event.target.tagName === 'A') {
     const category = event.target.textContent;
     await fetchBooksByCategory(category);
-
+listTopBooks.innerHTML=""
   }
 });
-//  allCategories.addEventListener('click', onClickMurcup)
 
-// function onClickMurcup(fetchTopBooks) {
-//   fetchTopBooks(markupCollections)
-// }
+
 
 export { fetchBooksByCategory};
+
