@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { fetchBook } from './see_more.js';
-import{serviceDetailInfo}from './modal_window.js'
+// import{serviceDetailInfo}from './modal_window.js'// там експорту немає
 // import { allCategories } from "./categories.js";
 // console.log(allCategories)
 const listTopBooks = document.querySelector(".book-list");
