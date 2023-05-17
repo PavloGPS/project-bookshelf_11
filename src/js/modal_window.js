@@ -128,16 +128,6 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
    </div>`;
 }
 
-/* // Отримання всіх елементів книжок
-  const books = document.querySelectorAll('.modal-content');
 
-  // Додавання обробника події кліку до кожної книжки
-  books.forEach(book => {
-    book.addEventListener('click', () => {
-      const bookId = book.getAttribute('data-book-id'); // Отримання id книги з атрибуту data-book-id
-      serviceDetailInfo(bookId)
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
-    });
-  });
- */
+
+
