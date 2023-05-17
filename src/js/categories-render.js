@@ -3,7 +3,7 @@ import axios from "axios";
 import { fetchBook } from './see_more.js';
 import{serviceDetailInfo}from './modal_window.js'// там експорту немає
 // import { allCategories } from "./categories.js";
-console.log(allCategories)
+// console.log(allCategories)
 const listTopBooks = document.querySelector(".book-list");
 const BAZA_URL = "https://books-backend.p.goit.global/books/top-books";
 const baseUrl = 'https://books-backend.p.goit.global/books/';
