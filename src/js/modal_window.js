@@ -1,25 +1,12 @@
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
   const response = await fetch(URL);
+  console.log(response)
   if (!response.ok) {
     throw new Error(response.statusText);
   }
   return response.json();
 }
-
-/* // Отримання всіх елементів книжок
-  const books = document.querySelectorAll('.modal-content');
-
-  // Додавання обробника події кліку до кожної книжки
-  books.forEach(book => {
-    book.addEventListener('click', () => {
-      const bookId = book.getAttribute('data-book-id'); // Отримання id книги з атрибуту data-book-id
-      serviceDetailInfo(bookId)
-        .then(data => console.log(data))
-        .catch(error => console.log(error));
-    });
-  });
- */
 
 serviceDetailInfo('643282b1e85766588626a087')
   .then(data => {
@@ -107,18 +94,16 @@ class Modal {
 
 function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
-  const isInShoppingList = shoppingList.some(item => item._id === _id);
+  const isInShoppingList = shoppingList.some(item => item.id === id);
   return `<div class="modal-container">
-      <img src="${book_image}" width="192"  height="281" alt="${title}" />
-      <div class="text-container"><h2 class="modal-title">${title}</h2>
+      <img src="${book_image}" width="287"  height="408" alt="${title}" />
+      <div class="book-details"><h2 class="modal-title">${title}</h2>
       <p class="author">${author}</p>
-      <span class="description">${
-        description
-          ? description
-          : 'We are sorry, we have no description of this book.'
-      }</span>
-  </div>
-  <div>
+      <p class="description">${description
+      ? description
+      : 'We are sorry, we have no description of this book.'
+    }</p></div>
+
   <ul class="platforms">
   <li>
     <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20" target="_blank" rel="noopener noreferrer nofollow">
@@ -136,12 +121,13 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
     </a>
   </li>
 </ul>
-  </div>
-  </div>
-     <button data-id="${_id}" data-action="${
-    isInShoppingList ? 'remove' : 'add'
-  }" type="button" class="add-to-cart-btn js-close">${
-    isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'
-  }</button>`;
+ 
+     <div><button data-id="${_id}" data-action="${isInShoppingList ? 'remove' : 'add'
+    }" type="button" class="add-to-cart-btn js-close">${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'
+    }</button></div>
+   </div>`;
 }
+
+
+
 

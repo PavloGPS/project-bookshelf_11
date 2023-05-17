@@ -1,5 +1,5 @@
 <header class="header">  
-  <div class="container">
+  <div class="container header__container">
     <include src="./partials/user-bar.html"></include>
     
     <div class="header-nav">
@@ -22,11 +22,16 @@
       </div>
      
 
-      <button class="menu-btn js-open-menu">
+      <button class="menu-btn js-open-menu js-mobile-menu-toggle">
         <svg width="28px" height="28px">
           <use class="burger" href="./images/sprite.svg#myMenu"></use>
         </svg>
         
+      </button>
+      <button type="button" class="mob-menu-close-btn js-close-menu ">
+        <svg class="" width="20" height="20">
+          <use href="/src/images/sprite.svg#icon-cross-btn"></use>
+        </svg>
       </button>
     </div>
   </div>
