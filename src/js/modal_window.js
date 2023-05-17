@@ -129,5 +129,9 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
 }
 
 
-
+export { Modal };
+  
+export { createBookMurkup };
+  
+export { serviceDetailInfo };
 
