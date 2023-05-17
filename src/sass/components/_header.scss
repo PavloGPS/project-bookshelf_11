@@ -16,7 +16,7 @@ $desktop: 1199.97px;
   background-color: $btn-support-color;  
 }
 
-.container{
+.header__container{
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -243,6 +243,8 @@ gap: 76px;
           display: none;
           background-color: transparent;
           border: none;
+          width:28px; 
+          height:28px;
         }
     
         .mob-menu-close-btn.show {
