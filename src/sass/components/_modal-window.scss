@@ -27,7 +27,7 @@
     transform: translate(-50%, -50%);
     padding: 40px 24px;
     width: 287px;
-    height: 95vh;
+    height: 98%;
     z-index: 300;
     background-color: #fff;
     position: relative;
@@ -39,6 +39,7 @@
     @media screen and (min-width: $tablet) {
             width: 579px;
             height: 465px;
+            padding: 40px;
         }
 
 }
@@ -97,11 +98,18 @@
 
 
 .modal-container {
-   display: flex;
-   flex-direction: column;
-align-items: center;
+   display: block;
 
-   
+   @media screen and(min-width:$tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+   }
+}
+
+.modal-btn {
+    text-align: center;
+
 }
 
 .add-to-cart-btn {
@@ -154,7 +162,11 @@ align-items: center;
     padding: 14px;
 }
 
+.platform-list {
+    
+}
+
 .platforms {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     display: flex;
 }
