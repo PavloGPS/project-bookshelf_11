@@ -1,3 +1,5 @@
+import Notiflix from 'notiflix';
+
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
   const response = await fetch(URL);
@@ -96,7 +98,7 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
   const isInShoppingList = shoppingList.some(item => item.id === id);
   return `<div class="modal-container">
-      <img src="${book_image}" width="287"  height="408" alt="${title}" />
+      <img src="${book_image}" class="book-image" alt="${title}" />
       <div class="book-details"><h2 class="modal-title">${title}</h2>
       <p class="author">${author}</p>
       <p class="description">${description
@@ -104,6 +106,7 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
       : 'We are sorry, we have no description of this book.'
     }</p></div>
 
+  <div class="platform-list">
   <ul class="platforms">
   <li>
     <a href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20" target="_blank" rel="noopener noreferrer nofollow">
@@ -120,12 +123,12 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
       <img srcset="modal.books.png 38w, modal.books@2x.png 86w" src="./modal/books.png" sizes="(min-width: 1200px) 38px, (min-width: 768px) 38px, (min-width: 480px) 38px, 100vw" alt="Barnes and Noble" />
     </a>
   </li>
-</ul>
- 
-     <div><button data-id="${_id}" data-action="${isInShoppingList ? 'remove' : 'add'
+</ul></div>
+ </div>
+     <div class="modal-btn"><button data-id="${_id}" data-action="${isInShoppingList ? 'remove' : 'add'
     }" type="button" class="add-to-cart-btn js-close">${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'
     }</button></div>
-   </div>`;
+   `;
 }
 
 

@@ -53,10 +53,12 @@ async function fetchTopBooks(url, listElement) {
   }
 }
 
-async function getCollectionBooks() {
-  await fetchTopBooks(BAZA_URL, listTopBooks);
-}
+// async function getCollectionBooks() {
+//   await fetchTopBooks(BAZA_URL, listTopBooks);
+// }
 
-getCollectionBooks();
-export { listTopBooks,BAZA_URL }
-export { fetchTopBooks }
+
+// getCollectionBooks();
+// export { markupCollections }
+// export { fetchTopBooks }
+
