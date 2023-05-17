@@ -1,0 +1,47 @@
+$mobile: 479.97px;
+$tablet: 767.98px;
+$desktop: 1199.97px;
+
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0;
+}
+.allCategories:focus,
+.allCategories:hover {
+    text-transform: uppercase;
+    color: #EAC645; ;
+}
+
+
+.allCategories{
+cursor:pointer;
+list-style-type: none;
+
+@media screen and (max-width: $mobile) {
+
+    
+}
+}
+
+
+.allCategories{
+padding: 12px;
+}
+
+
+.gallery {
+    height: 228px;
+overflow-y: auto;
+max-width: 307px;
+   
+}
+
+.category_list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
