@@ -42,7 +42,7 @@ async function fetchBooksByCategory(category) {
     const categories = await fetchCategories();
     const listItems = categories.map(category => `<li class='item'><a class='allCategories'href="#">${category}</a></li>`);
     const allItems="All categories"
-    galleryList.innerHTML = `<ul><li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}</ul>`;
+    galleryList.innerHTML = `<ul class='gallery-container'><li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}</ul>`;
   } catch (error) {
     console.error('Помилка:', error);
   }
