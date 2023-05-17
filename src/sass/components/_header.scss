@@ -4,11 +4,16 @@ $desktop: 1199.97px;
 
 
 .header{
-    height: 72px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+  height: 72px;
 
-    border: 1.5px solid #111111;
-    border-radius: 0px 0px 8px 8px;
-    background-color: $btn-support-color;  
+  border: 1.5px solid #111111;
+  border-radius: 0px 0px 8px 8px;
+  background-color: $btn-support-color;  
 }
 
 .container{
@@ -138,7 +143,23 @@ gap: 76px;
         .bag{
           fill: rgba(255, 255, 255, 1);
         }
+        .book-card{
+        background-color: rgba(17, 17, 17, 1);
+         border-color: rgba(79, 46, 232, 0.4);
+  
+         }
 
+         .book-title{
+          color: rgba(255, 255, 255, 1);
+        }
+        .book-description{
+          color: rgba(255, 255, 255, 1);
+        }
+
+        .title-shopping-list{
+          color: rgba(255, 255, 255, 1);
+        }
+     
       }
     
     .theme-switch {
@@ -213,6 +234,23 @@ gap: 76px;
        
             
       } 
+
+    .mob-menu-close-btn {
+      fill: #FFFFFF;
+    }
+    }
+        .mob-menu-close-btn {
+          
+          display: none;
+          background-color: transparent;
+          border: none;
+        }
+    
+        .mob-menu-close-btn.show {
+          display: block;
+        }
+    .hidden {
+      display: none;
     }
 
    

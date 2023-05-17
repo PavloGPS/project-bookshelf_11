@@ -24,15 +24,21 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: "DM sans";
+    src: url("../fonts/DMSans-Italic.woff2"), url("../fonts/DMSans-Italic.woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     font-family: 'DM sans', sans-serif;
     background-color: $section-background;
 
 }
 
-body.modal-open {
-    overflow: hidden;
-}
+
 /* Скидання стилів */
 h1,
 h2,
