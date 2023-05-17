@@ -1,11 +1,11 @@
 .mob-menu-container {
     position: fixed;
-    top: 0;
+    top: 100%;
     left: 0;
     background-image: url('/src/images/backgrounds/background.png'), radial-gradient(183.6% 183.01% at 59.76% -23.42%, #4F2EE8 18.03%, #FFFFFF 100%);
     background-repeat: no-repeat;
     background-size: contain;
-    background-position: 0px 470px, 0 0;
+    background-position: 0px 380px, 0 0;
     width: 100%;
     height: 100%;
     z-index: 998;
@@ -21,13 +21,18 @@
 
     }
 }
+
+
 .container {
     margin: 0;
 }
 
 .mob-menu-container.is-open {
     transform: translateX(0);
+    top: 72px;
 }
+
+
 
 .menu-header {
     height: 72px;
@@ -38,7 +43,7 @@
 }
 
 .mob-menu-list {
-    margin-top: 245px;
+    margin-top: 183px;
     margin-left: 129px;
 }
 
@@ -72,28 +77,15 @@
     color: #111111;
     padding: 8px 16px;
 }
-.switch-auth{
+
+.switch-auth {
     margin-left: auto;
     margin-right: 14px;
     display: flex;
 }
-.mob-menu__icon{
+
+.mob-menu__icon {
     padding-left: 4px;
     fill: #FFFFFF;
 }
 
-[data-theme='dark'] {
-    background-color: rgba(32, 32, 36, 1);
-    color:
-        rgba(255, 255, 255, 1);
-
-    .menu-header {
-        background: #111111;
-        border: 1.5px solid #FFFFFF;
-        border-radius: 0px 0px 8px 8px;
-    }
-.mob-menu-close-btn {
-    fill: #FFFFFF;
-}
-
-}

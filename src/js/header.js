@@ -1,3 +1,6 @@
+const logo = document.querySelector('.logo');
+
+// hilighting current page link
 const homeLink = document.querySelector('[data-page="home-list"]');
 const ShoppingListLink = document.querySelector('[data-page="shpng-list"]');
 
@@ -11,3 +14,30 @@ navHreffsArr.forEach((navLink) => {
         navLink.style.backgroundColor = "transparent";
     }    
 })
+
+
+// -----for close-btn in burger-menu
+
+document.addEventListener('DOMContentLoaded', function() {
+  var mobileMenuToggle = document.querySelector('.js-mobile-menu-toggle');
+  var mobileMenuClose = document.querySelector('.js-close-menu');
+
+  mobileMenuToggle.addEventListener('click', function() {
+    mobileMenuClose.classList.toggle('show');
+  });
+
+  mobileMenuClose.addEventListener('click', function() {
+    mobileMenuClose.classList.remove('show');
+  });
+    
+    mobileMenuToggle.addEventListener('click', function() {
+  mobileMenuToggle.classList.add('hidden');
+  mobileMenuClose.classList.remove('hidden');
+});
+
+mobileMenuClose.addEventListener('click', function() {
+  mobileMenuClose.classList.add('hidden');
+  mobileMenuToggle.classList.remove('hidden');
+});
+});
+
