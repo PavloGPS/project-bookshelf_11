@@ -128,6 +128,10 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
    </div>`;
 }
 
+export { Modal };
 
+export { createBookMurkup };
+
+export { serviceDetailInfo };
 
 
