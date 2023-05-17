@@ -1,5 +1,4 @@
-
-import {throttle} from 'lodash';
+import { throttle } from 'lodash';
 import {foundatiionsArr} from './foundations-array.js';
 
 const supportList = document.querySelector('ul.list__support');
@@ -13,7 +12,6 @@ scrollUpBtn.addEventListener('click', throttle(() => {
     behavior: 'smooth',});
 }, 300));
 
-
 scrollDownBtn.addEventListener('click', throttle(() => {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
   supportList.scrollTo({  top: supportList.scrollTop + (listItemHeight * 3 + 16),
@@ -21,26 +19,25 @@ scrollDownBtn.addEventListener('click', throttle(() => {
 }, 300));
 
 
-
 function updateScrollButtons() {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
   const listHeight = supportList.offsetHeight;
 
   if (supportList.scrollTop === 0) {
-    scrollUpBtn.classList.add('--is-hidden');
+    scrollUpBtn.style.display = 'none';
   } else {
-    scrollUpBtn.classList.remove('--is-hidden');
+    scrollUpBtn.style.display = 'block';
   }
 
   if (supportList.scrollTop + listHeight >= supportList.scrollHeight) {
-    scrollDownBtn.classList.add('--is-hidden');
+    scrollDownBtn.style.display = 'none';
   } else {
-    scrollDownBtn.classList.remove('--is-hidden');
+    scrollDownBtn.style.display = 'block';
   }
 }
 
 
-supportList.addEventListener('scroll', throttle(() => updateScrollButtons), 300);
+supportList.addEventListener('scroll', throttle(updateScrollButtons, 300));
 
 foundatiionsArr.forEach(foundation => {
   const listItem = document.createElement('li');
