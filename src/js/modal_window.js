@@ -1,12 +1,12 @@
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
   const response = await fetch(URL);
+  console.log(response)
   if (!response.ok) {
     throw new Error(response.statusText);
   }
   return response.json();
 }
-
 
 serviceDetailInfo('643282b1e85766588626a087')
   .then(data => {
@@ -94,7 +94,7 @@ class Modal {
 
 function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
-  const isInShoppingList = shoppingList.some(item => item._id === _id);
+  const isInShoppingList = shoppingList.some(item => item.id === id);
   return `<div class="modal-container">
       <img src="${book_image}" width="287"  height="408" alt="${title}" />
       <div class="book-details"><h2 class="modal-title">${title}</h2>
