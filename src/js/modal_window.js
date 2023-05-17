@@ -1,3 +1,5 @@
+import Notiflix from 'notiflix';
+
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
   const response = await fetch(URL);
@@ -96,7 +98,7 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
   const isInShoppingList = shoppingList.some(item => item.id === id);
   return `<div class="modal-container">
-      <img src="${book_image}" width="287"  height="408" alt="${title}" />
+      <img src="${book_image}" class="book-image" alt="${title}" />
       <div class="book-details"><h2 class="modal-title">${title}</h2>
       <p class="author">${author}</p>
       <p class="description">${description
