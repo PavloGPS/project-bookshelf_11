@@ -1,3 +1,4 @@
+import {throttle} from 'lodash';
 import {foundatiionsArr} from './foundations-array.js';
 
 const supportList = document.querySelector('ul.list__support');
@@ -5,16 +6,20 @@ const scrollUpBtn = document.querySelector('.swiper-up-btn');
 const scrollDownBtn = document.querySelector('.swiper-down-btn');
 
 
-scrollUpBtn.addEventListener('click', () => {
+scrollUpBtn.addEventListener('click', throttle(() => {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
-  supportList.scrollTo({ top: supportList.scrollTop - listItemHeight, behavior: 'smooth' });
-});
+  supportList.scrollTo({ top: supportList.scrollTop - (listItemHeight * 3 + 16),
+    behavior: 'smooth',});
+}, 300));
 
 
-scrollDownBtn.addEventListener('click', () => {
+scrollDownBtn.addEventListener('click', throttle(() => {
   const listItemHeight = supportList.firstElementChild.offsetHeight;
-  supportList.scrollTo({ top: supportList.scrollTop + listItemHeight, behavior: 'smooth' });
-});
+  supportList.scrollTo({  top: supportList.scrollTop + (listItemHeight * 3 + 16),
+    behavior: 'smooth',});
+}, 300));
+
+
 
 
 function updateScrollButtons() {
@@ -22,20 +27,20 @@ function updateScrollButtons() {
   const listHeight = supportList.offsetHeight;
 
   if (supportList.scrollTop === 0) {
-    scrollUpBtn.style.display = 'none';
+    scrollUpBtn.classList.add('--is-hidden');
   } else {
-    scrollUpBtn.style.display = 'block';
+    scrollUpBtn.classList.remove('--is-hidden');
   }
 
   if (supportList.scrollTop + listHeight >= supportList.scrollHeight) {
-    scrollDownBtn.style.display = 'none';
+    scrollDownBtn.classList.add('--is-hidden');
   } else {
-    scrollDownBtn.style.display = 'block';
+    scrollDownBtn.classList.remove('--is-hidden');
   }
 }
 
 
-supportList.addEventListener('scroll', updateScrollButtons);
+supportList.addEventListener('scroll', throttle(updateScrollButtons, 200));
 
 foundatiionsArr.forEach(foundation => {
   const listItem = document.createElement('li');
