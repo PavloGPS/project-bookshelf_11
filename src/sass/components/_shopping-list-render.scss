@@ -176,29 +176,60 @@ position: relative;
     margin-top: 14px;
 
     color: $primary-color;
-
+    
     @media screen and (max-width: $mobile) {
-
-     margin-top: 8px;
+      
+      margin-top: 8px;
     }
   }
   
   
   .book-author{
-  font-weight: 400;
-  font-size: 12px;
-  line-height: 14px;
-  letter-spacing: -0.04em;
-  margin-top: 48px;
-  
-  color:$subtitle-color;
-
-  @media screen and (max-width: $mobile) {
-     
-    margin: 0;
-   }
-
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 14px;
+    letter-spacing: -0.04em;
+    margin-top: 48px;
+    
+    color:$subtitle-color;
+    
+    @media screen and (max-width: $mobile) {
+      
+      margin: 0;
+    }
+    
   }
+  $mobile: 479.97px;
+
+  .book-empty-img{
+    width: 322px;
+    height: 241px;
+    margin-top: 20px;
+    margin-left: 14px;
+    background-image: url('/src/images/shoping-list/books-desktop.png');
+    @media screen and (max-width: $tablet) {
+     
+      width: 265px;
+      height: 198px;
+      margin-top: 14px;
+      margin-left: 0;
+    }
+    
+  }
+
+.book-empty-description{
+  font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+
+text-align: center;
+letter-spacing: -0.02em;
+
+color: $category-color-lm;
+
+@media screen and (max-width: $tablet) {
+     
+  width: 265px;
   
    $mobile: 479.97px;
 
