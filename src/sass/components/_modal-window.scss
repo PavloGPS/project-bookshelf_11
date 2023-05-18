@@ -179,6 +179,7 @@
   justify-content: center;
   align-items: center;
   width: 211px;
+  height: 46px;
   margin: 0 auto;
 
   font-weight: 700;
@@ -203,6 +204,8 @@
 
   @media screen and (min-width: 768px) {
     font-size: 18px;
+    width: 499px;
+    height: 65px;
     line-height: calc(24 / 18);
   }
 }
