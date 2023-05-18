@@ -188,15 +188,14 @@
   border: 2px solid #4f2ee8;
   border-radius: 40px;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
-  background-color: $btn-support-color;
+  background-image: $btn-support-color;
 
-  transition-property: background-color;
-  transition-duration: 250ms;
-  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition: $timing-function;
 
   &:hover,
   &:focus {
-    background-color: $support-gradient;
+    background-color: #4f2ee8;
+    transform: scale(1);
   }
 
   @media screen and (min-width: 768px) {
