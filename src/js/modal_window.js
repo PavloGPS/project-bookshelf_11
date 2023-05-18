@@ -39,7 +39,7 @@ class Modal {
     this.visible = false;
   }
   create(murkup) {
-    const html = `<div class="overlay js-module-overlay">
+    const html = `<div class="overlay js-module-overlay js-close">
         <div class="modal">          
           <button type="button" class="modal-close js-close">
           </button>
