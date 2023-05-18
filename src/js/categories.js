@@ -6,7 +6,7 @@ import{BAZA_URL} from './categories-render.js'
 const galleryList = document.querySelector('.gallery');
 const  categoryList = document.querySelector('.category_list');
 const baseUrl = 'https://books-backend.p.goit.global/books/';
-const allCategories = document.querySelector('.all_categories')
+// const allCategories = document.querySelector('.all_categories')//Що це мало бути?
 const allItems="All categories"
 async function fetchCategories() {
   try {
