@@ -165,7 +165,22 @@ gap: 76px;
         main{
           background-color: #111111;
         }
-     
+
+      .modal {
+background-color: $some-color;
+                }
+.modal-title {
+  color: $btn-support-color;
+}
+         .modal-close:after {
+          background-color: $btn-support-color;
+         }
+.modal-close:before {
+  background-color: $btn-support-color;
+}
+.description {
+  color: $btn-support-color;
+}
       }
     
     .theme-switch {
