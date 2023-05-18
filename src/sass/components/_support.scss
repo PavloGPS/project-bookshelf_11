@@ -73,7 +73,8 @@ $desktop: 1199.97px;
   padding-left: 40px;
   padding-right: 58px;
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (max-width: $tablet) {
+    display: none;
     padding-bottom: 84px;}
 
 
@@ -151,3 +152,4 @@ $desktop: 1199.97px;
   fill: $btn-support-color;
   z-index: 99;
 }
+
