@@ -33,7 +33,7 @@
 
   background-color: #ffffff;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     width: 584px;
     height: 470px;
     padding: 40px;
@@ -62,7 +62,7 @@
   left: 20px;
   transform: rotate(45deg);
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $mobile) {
     width: 22px;
     top: 14px;
     left: 4px;
@@ -79,7 +79,7 @@
   left: 20px;
   transform: rotate(135deg);
 
-  @media screen and (min-width: $tablet) {
+  @media screen and (min-width: $mobile) {
     width: 22px;
     top: 14px;
     left: 4px;
@@ -92,7 +92,7 @@
 
   margin-bottom: 54px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     flex-direction: row;
     margin-bottom: 40px;
   }
@@ -101,7 +101,7 @@
 .book-details {
   margin-top: 14px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     margin-top: 0px;
     margin-left: 24px;
     padding-bottom: 80px;
@@ -113,7 +113,7 @@
   width: 287px;
   height: 408px;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     width: 192px;
     height: 281px;
   }
@@ -127,7 +127,7 @@
   line-height: calc(18px / 16px);
   color: $primary-color;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     margin-bottom: 8px;
 
     font-size: 24px;
@@ -144,7 +144,7 @@
   letter-spacing: -0.04em;
   color: $subtitle-color;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     margin-bottom: 20px;
 
     font-size: 14px;
@@ -161,7 +161,7 @@
   letter-spacing: -0.04em;
   color: $primary-color;
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     margin-bottom: 20px;
   }
 }
@@ -198,10 +198,21 @@
     transform: scale(1);
   }
 
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: $mobile) {
     font-size: 18px;
     width: 499px;
     height: 65px;
     line-height: calc(24 / 18);
   }
+}
+
+.remove-message {
+  font-style: normal;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: calc(14px / 12px);
+    color: $sign-in-color-dm;
+display: flex;
+  text-align: center;
+  padding: 8px;
 }

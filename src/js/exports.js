@@ -1,2 +1,2 @@
 // Modal window functions
-export { Modal, createBookMurkup } from './modal_window';
+export { Modal, createBookMarkup } from './modal_window';

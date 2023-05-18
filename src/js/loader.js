@@ -1,9 +1,9 @@
 export class Loader {
   constructor() {
     this.loaderEl = document.querySelector('.lds-spinner');
-    }
+  }
  
-    // метод loader.show() показує лоадер
+  // метод loader.show() показує лоадер
   show() {
     this.loaderEl = 'block';
   }
@@ -12,3 +12,4 @@ export class Loader {
   hide() {
     this.loaderEl = 'none';
   }
+}

@@ -1,10 +1,9 @@
-import Notiflix from 'notiflix';
+import { remove } from "lodash";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
 
   const response = await fetch(URL);
-  console.log(response);
   if (!response.ok) {
     throw new Error(response.statusText);
   }
@@ -14,7 +13,7 @@ async function serviceDetailInfo(id) {
 serviceDetailInfo('643282b1e85766588626a087')
   .then(data => {
     const instance = new Modal();
-    instance.create(createBookMurkup(data));
+    instance.create(createBookMarkup(data));
     instance.open();
     const modalControlBTN = document.querySelector('.add-to-cart-btn');
     modalControlBTN.addEventListener('click', e => {
@@ -25,10 +24,23 @@ serviceDetailInfo('643282b1e85766588626a087')
         console.log(shoppingList);
         shoppingList.push(data);
         localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
+        e.target.dataset.action = 'remove';
+        e.target.innerText = 'REMOVE FROM THE SHOPPING LIST';
       } else {
         const idx = shoppingList.findIndex(({ id }) => id === bookID);
         shoppingList.splice(idx, 1);
         localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
+        e.target.dataset.action = 'add';
+        e.target.innerText = 'ADD TO SHOPPING LIST';
+      }
+      
+      if (e.target.dataset.action === 'remove') {
+        const message = document.createElement('span');
+        message.innerText = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+         message.classList.add('remove-message');
+        e.target.insertAdjacentElement('afterend', message);
+      } else {
+        remove;
       }
     });
   })
@@ -38,12 +50,12 @@ class Modal {
   constructor() {
     this.visible = false;
   }
-  create(murkup) {
+  create(markup) {
     const html = `<div class="overlay js-module-overlay js-close">
         <div class="modal">          
           <button type="button" class="modal-close js-close">
           </button>
-          ${murkup}
+          ${markup}
         </div>
       </div>`;
 
@@ -89,9 +101,14 @@ class Modal {
   }
 }
 
-function createBookMurkup({ author, book_image, description, title, _id }) {
+function createBookMarkup({ author, book_image, description, title, _id, buy_links }) {
   const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
   const isInShoppingList = shoppingList.some(item => item.id === _id);
+  // buyLinks - code by Vadim
+  const linksToShow = [0, 1, 4];
+      const buyLinks = buy_links.filter((link, index) =>
+        linksToShow.includes(index)
+      );
   return `<div class="modal-content">
   <img src="${book_image}" width="287" height="408" alt="${title}" class="book-image" />
   <div class="book-details">
@@ -103,64 +120,28 @@ function createBookMurkup({ author, book_image, description, title, _id }) {
         : 'We are sorry, we have no description of this book.'
     }
     </p>
-    <ul class="platforms">
-          <li>
-            <a
-              href="https://www.amazon.com/Atomic-Habits-Proven-Build-Break/dp/0735211299?tag=NYTBSREV-20"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <img
-                srcset="modal.amazon.png 62w, modal.amazon@2x.png 124w"
-                src="./modal/amazon.png"
-                sizes="(min-width: 1200px) 62px, (min-width: 768px) 62px, (min-width: 480px) 62px, 100vw"
-                alt="Amazon"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://goto.applebooks.apple/9780735211292?at=10lIEQ"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <img
-                srcset="modal.book.png 33w, modal.book@2x.png 66w"
-                src="./modal/book.png"
-                sizes="(min-width: 1200px) 33px, (min-width: 768px) 33px, (min-width: 480px) 33px, 100vw"
-                alt="Apple books"
-              />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.anrdoezrs.net/click-7990613-11819508?u…w.barnesandnoble.com%2Fw%2F%3Fean%3D9780735211292"
-              target="_blank"
-              rel="noopener noreferrer nofollow"
-            >
-              <img
-                srcset="modal.books.png 38w, modal.books@2x.png 86w"
-                src="./modal/books.png"
-                sizes="(min-width: 1200px) 38px, (min-width: 768px) 38px, (min-width: 480px) 38px, 100vw"
-                alt="Barnes and Noble"
-              />
-            </a>
-          </li>
-    </ul>
+    <ul class="book-shops">
+          ${buyLinks
+              .map(
+                ({ name, url }) =>
+                  `<li><a href=${url} target="_blank">${name}</a></li>`
+              )
+              .join('')}
+          </ul>
   </div>
 </div>
 <button
 data-id="${_id}"
 data-action="${isInShoppingList ? 'remove' : 'add'}"
 type="button"
-class="add-to-cart-btn js-close">
+class="add-to-cart-btn">
 ${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'}
 </button>`;
 }
 
 export { Modal };
 
-export { createBookMurkup };
+export { createBookMarkup };
 
 export { serviceDetailInfo };
 
