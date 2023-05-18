@@ -36,7 +36,7 @@ if (shoppingList.length > 0) {
         <div class="author-shops">
           <h4 class="book-author">${author}</h4>
           <ul class="book-shops">
-           ${buyLinks
+          ${buyLinks
               .map(
                 ({ name, url }) =>
                   `<li><a href=${url} target="_blank">${name}</a></li>`
@@ -48,7 +48,7 @@ if (shoppingList.length > 0) {
       <button class="basket-btn">
         <svg class="basket-img" width="14px" height="14px">
         <use href="./images/sprite.svg#basket"></use>
-            </svg>
+        </svg>
       </button>
     </li>
   </ul>
@@ -57,10 +57,14 @@ if (shoppingList.length > 0) {
     .join('');
 } else {
   bookListEl.innerHTML = `
-    <div>
-       <p>This page is empty, add some books and proceed to order.</p>
-       <img src="./images/shoping-list/books-desktop.png" />
-     </div>`;
+    <div class="book-empty-list">
+    <p class="book-empty-description">
+      This page is empty, add some books and proceed to order.
+    </p>
+    <div class="book-empty-img"></div>
+    </div>
+    </div>
+     `;
 }
 
 const removeBookButtons = document.querySelectorAll('.basket-btn');
