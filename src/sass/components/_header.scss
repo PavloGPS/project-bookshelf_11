@@ -147,7 +147,7 @@ $desktop: 1199.97px;
     fill: #ffffff;
   }
   main {
-    background-color: #111111;
+    background-color: $some-color;
   }
 
   //Home
@@ -157,9 +157,7 @@ $desktop: 1199.97px;
 .title-categories {
   color: $btn-support-color;
 }
-.desctop-wrapper {
-background-color: $some-color;
-}
+
 .see_more {
   color: $btn-support-color;
   background-color: transparent;
