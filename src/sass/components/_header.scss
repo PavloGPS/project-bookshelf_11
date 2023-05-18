@@ -150,7 +150,22 @@ $desktop: 1199.97px;
     background-color: #111111;
   }
 
-  // Модалка
+  //Home
+.title-book {
+  color: $btn-support-color;
+}
+.title-categories {
+  color: $btn-support-color;
+}
+.desctop-wrapper {
+background-color: $some-color;
+}
+.see_more {
+  color: $btn-support-color;
+  background-color: transparent;
+}
+
+  // Modal-window
   .modal {
     background-color: $some-color;
   }
