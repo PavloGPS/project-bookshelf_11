@@ -11,9 +11,19 @@
   <body>
     <include src="./partials/header.html"></include>
     <main>
-      <include src="./partials/categories.html"></include>
-      <include src="./partials/support.html"></include>
+      <div class="desctop-wrapper">
+      <div class="container wrapper">
+      <div class="categories-wrap">
+        <include src="./partials/categories.html"></include>
+      </div>
+      <div class="support-wrap">
+        <include src="./partials/support.html"></include>
+      </div>
+      </div>
+      <div class="container categories-render-wrap">
       <include src="./partials/categories-render.html"></include>
+      </div>
+      </div>
       <include src="./partials/loader.html"></include>
       <include src="./partials/scroll-up.html"></include>
       <include src="./partials/modal_window.html"></include>
