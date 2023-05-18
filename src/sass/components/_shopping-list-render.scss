@@ -31,8 +31,7 @@ position: relative;
     width: 996px;
     height: 213px;
     left: 32px;
-    // top: 204px;
-  
+    
     background: #FFFFFF;
     border: 2px solid rgba(79, 46, 232, 0.4);
     border-radius: 16px;
@@ -70,7 +69,7 @@ position: relative;
   position: absolute;
   top: 24px;
   right: 24px;
-  // background-image: ('')
+
   padding: 10px;
   border: none;
   cursor: pointer;
@@ -84,9 +83,7 @@ position: relative;
   line-height: 1.125;
   letter-spacing: -0.04em;
   text-transform: uppercase;
-  
-
-  
+    
   margin: 24px;
   
   @media screen and (max-width: $mobile) {
@@ -234,6 +231,39 @@ color: $category-color-lm;
      
   width: 265px;
   
+   $mobile: 479.97px;
+
+  .book-empty-img{
+    width: 322px;
+    height: 241px;
+    margin-top: 20px;
+    margin-left: 14px;
+    background-image: url('/src/images/shoping-list/books-desktop.png');
+    @media screen and (max-width: $tablet) {
+
+      width: 265px;
+      height: 198px;
+      margin-top: 14px;
+      margin-left: 0;
+    }
+
+  }
+}  
+
+.book-empty-description{
+  font-weight: 400;
+font-size: 18px;
+line-height: 24px;
+
+text-align: center;
+letter-spacing: -0.02em;
+
+color: $category-color-lm;
+
+@media screen and (max-width: $tablet) {
+
+  width: 265px;
+
 }
 }
 .book-empty-list{
@@ -244,151 +274,9 @@ color: $category-color-lm;
   margin-right: auto;
 
   @media screen and (max-width: $tablet) {
-     
+
     width: 265px;
     margin-top: 120px;
   }
 }
-  
-  // .book-links {
-  //   display: flex;
-  //   flex-direction: row;
-  //   justify-content: flex-end;
-  // }
-  
-  // .book-links li {
-  //   list-style: none;
-  //   margin-right: 10px;
-  // }
-  
-  // .book-links li:last-child {
-  //   margin-right: 0;
-  // }
-  
-  // .link-image a {
-  //   display: block;
-  //   width: 50px;
-  //   height: 50px;
-  //   background-image: ('');
-  //   background-repeat: no-repeat;
-  //   background-position: center center;
-  //   background-size: 100%;
-  // }
-  
-  // .link-image a:hover {
-  //   opacity: 0.8;
-  // }
-
-      // то что пришло из коммита Вадима
-      //   color: #111111;
-      
-      // }
-        
-      // .book-category {
-      //   font-family: 'DM Sans';
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   font-size: 12px;
-      //   line-height: 1.167;
-      //   letter-spacing: 0.03em;
-      
-      //   color: #B4AFAF;
-      // }
-        
-      // .book-description {
-      //   font-family: 'DM Sans';
-      //   font-style: normal;
-      //   font-weight: 400;
-      //   font-size: 14px;
-      //   line-height: 1.286;
-      //   letter-spacing: -0.04em;
-      
-      //   color: #111111;
-      // }
-        
-      // .book-author {
-      //   font-family: 'DM Sans';
-      //   font-style: italic;
-      //   font-weight: 400;
-      //   font-size: 12px;
-      //   line-height: 1.167;
-      //   letter-spacing: -0.04em;
-      
-      //   color: #B4AFAF;
-      // }
-        
-      // .book-links {
-      //   display: flex;
-      //   flex-direction: row;
-      //   justify-content: flex-end;
-      // }
-      
-      // .book-links li {
-      //   list-style: none;
-      //   margin-right: 10px;
-      // }
-        
-      // .book-links li:last-child {
-      //   margin-right: 0;
-      // }
-        
-      // .link-image a {
-      //   display: block;
-      //   width: 50px;
-      //   height: 50px;
-      //   background-image: ('');
-      //   background-repeat: no-repeat;
-      //   background-position: center center;
-      //   background-size: 100%;
-      // }
-      
-      // .link-image a:hover {
-      //   opacity: 0.8;
-      // }
-
-      // .book-author {
-      //   font-size: 14px;
-      //   font-style: italic;
-      //   margin-bottom: 20px;
-      // }
-      // .book-description {
-      //   font-size: 16px;
-      //   margin-bottom: 10px;
-      // }
-  // .book-category {
-  //   font-size: 18px;
-  //   font-weight: bold;
-  //   margin-bottom: 10px;
-    // .book-cover {
-    //   border-radius: 8px;
-    //   max-width: 100%;
-    //   height: auto;
-    // }
-    
-    // .book-text {
-    //   flex: 1;
-    // }
-    
-    // .remove-book {
-    //   position: absolute;
-    //   top: 24px;
-    //   right: 24px;
-    // //   background-image: ('')
-    //   padding: 10px;
-    //   border: none;
-    //   cursor: pointer;
-    // }
-    
-    // .book-title,
-    // .book-category,
-    // .book-description,
-    // .book-author {
-    //   margin: 0;
-    // }
-    
-    // .book-title {
-    //   font-size: 24px;
-    //   font-weight: bold;
-    //   margin-bottom: 10px;
-    // }
-  // }
+}
