@@ -21,13 +21,11 @@
 
 .modal {
   position: absolute;
-  top: 45%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   width: 335px;
-  height: 95vh;
-  overflow-y: auto;
   padding: 40px 24px;
 
   border: 2px solid #111111;
@@ -36,9 +34,8 @@
   background-color: #ffffff;
 
   @media screen and (min-width: 768px) {
-    top: 50%;
-    width: 579px;
-    height: 465px;
+    width: 584px;
+    height: 470px;
     padding: 40px;
   }
 }
