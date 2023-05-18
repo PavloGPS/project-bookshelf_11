@@ -1,5 +1,5 @@
 .gallery {
-    width: 335px;
+    width: 355px;
     height: 228px;
     overflow-y: auto;
     overflow-x: hidden;
@@ -46,7 +46,6 @@
 &:focus,
 &.be-bold {
     font-weight: 700;
-    text-transform: uppercase;
     color: $secondary-color;
 }
 
@@ -58,6 +57,29 @@
 &-thumb {
         background-color: #E0E0E0;
         border-radius: 12px;
-    }
+    } 
 }
 
+
+
+                              //    SWITCH THEME TO DARK    //
+
+
+
+[data-theme='dark'] {
+ 
+ .gallery {
+    background-color:  #202024;
+ }
+ .allCategories{
+    color:  #FFFFFF99;
+
+    &:focus,
+    &.be-bold {
+        color: $third-color;
+    }
+ }
+ ::-webkit-scrollbar-thumb {
+    background-color: $primary-color
+ }
+}
