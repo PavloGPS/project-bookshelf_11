@@ -4,7 +4,7 @@ import { listTopBooks } from './categories-render.js'
 import { markupCollections} from './categories-render'
 import { fetchTopBooks } from "./categories-render.js";
 import{BAZA_URL} from './categories-render.js'
-const galleryList = document.querySelector('.gallery');
+const galleryList = document.querySelector('.category-list');
 // const  categoryList = document.querySelector('.category-list');
 const baseUrl = 'https://books-backend.p.goit.global/books/';
 // const linkAllcategories=galleryList.querySelector('.allCategories')
