@@ -8,7 +8,7 @@ import{serviceDetailInfo}from './modal_window.js'// там експорту не
 
 const listTopBooks = document.querySelector(".book-list");
 const BAZA_URL = "https://books-backend.p.goit.global/books/top-books";
-const baseUrl = 'https://books-backend.p.goit.global/books/';
+// const baseUrl = 'https://books-backend.p.goit.global/books/';
 let markupCollections = '';
 
 async function fetchTopBooks(url, listElement) {
@@ -53,12 +53,17 @@ async function fetchTopBooks(url, listElement) {
   }
 }
 
-// async function getCollectionBooks() {
-//   await fetchTopBooks(BAZA_URL, listTopBooks);
-// }
+async function getCollectionBooks() {
+  await fetchTopBooks(BAZA_URL, listTopBooks);
+}
 
 
-// getCollectionBooks();
+getCollectionBooks();
 // export { markupCollections }
-// export { fetchTopBooks }
+
+
+export { listTopBooks,BAZA_URL }
+export { fetchTopBooks }
+export{ markupCollections }
+
 
