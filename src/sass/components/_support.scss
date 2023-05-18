@@ -76,8 +76,13 @@ $desktop: 1199.97px;
   @media screen and (min-width: $tablet) {
     padding-bottom: 84px;}
 
-    
+    @media screen and (max-width: $tablet) {
+      display: none;
+        
+  }
 }
+
+
 
 
 .swiper-up-btn {
