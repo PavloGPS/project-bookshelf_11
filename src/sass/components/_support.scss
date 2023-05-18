@@ -73,11 +73,10 @@ $desktop: 1199.97px;
   padding-left: 40px;
   padding-right: 58px;
 
-  @media screen and (max-width: $tablet) {
-    display: none;
+  @media screen and (min-width: $tablet) {
     padding-bottom: 84px;}
 
-
+    
 }
 
 
