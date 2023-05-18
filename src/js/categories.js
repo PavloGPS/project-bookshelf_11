@@ -42,7 +42,7 @@ async function fetchBooksByCategory(category) {
     const categories = await fetchCategories();
     const listItems = categories.map(category => `<li class='item'><a class='allCategories'href="#">${category}</a></li>`);
     const allItems="All categories"
-    galleryList.innerHTML = `<ul class='gallery-container'><li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}</ul>`;
+    galleryList.innerHTML = `<div class='container'><ul><li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}</ul></div>`;
   } catch (error) {
     console.error('Помилка:', error);
   }
@@ -56,9 +56,13 @@ galleryList.addEventListener('click', async (event) => {
   }
 });
 //  allCategories.addEventListener('click', onClickMurcup)
-
 // function onClickMurcup(fetchTopBooks) {
 //   fetchTopBooks(markupCollections)
 // }
+$(function () {
+    $('allCategories').on('click', function () {
+        $(this).toggleClass('be-bold');
+    });
+});
 
 export { fetchBooksByCategory};
