@@ -104,6 +104,9 @@ $desktop: 1199.97px;
     border: 1.5px solid #ffffff;
     border-radius: 0px 0px 8px 8px;
   }
+  .book-empty-description {
+    color: rgba(255, 255, 255, 0.6);
+  }
 
   .logo-text {
     color: rgba(243, 243, 243, 1);
@@ -224,6 +227,12 @@ input:checked + .slider:before {
   &::before {
     border-radius: 50%;
   }
+
+  .title-shopping-list{
+    color: white;
+  }
+
+
 }
 
 .menu-btn {
