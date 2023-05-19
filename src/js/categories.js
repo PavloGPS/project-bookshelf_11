@@ -15,18 +15,29 @@ async function fetchCategories() {
     throw error;
   }
 }
+function truncateText(text, maxLength) {
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return text.substring(0, maxLength - 3) + '...';
+}
 
 
 async function fetchBooksByCategory(category) {
   try {
     const { data } = await axios(`${baseUrl}category?category=${category}`);
     const markupCategory=data.map(({ author, title,book_image }) => {
-      return `<li>
+     const truncatedTitle = truncateText(title, 20); 
+        const truncatedAuthor = truncateText(author, 40);
+ return `<li>
           <a class="link" href="${book_image}">
             <img class="img" src="${book_image}" alt="книга" width="180px" height="256px" loading="lazy" />
           </a>
-          <h3>${title}</h3>
-          <h3>${author}</h3>
+        <div class="wrap-name">
+              <h3 class="title-book">${truncatedTitle}</h3>
+              <h3 class="author-book">${truncatedAuthor}</h3>
+            </div>
         </li>`;
     });
 
