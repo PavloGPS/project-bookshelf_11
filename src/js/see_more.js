@@ -1,11 +1,12 @@
 
 import axios from "axios";
-let category =''
-const baseUrl='https://books-backend.p.goit.global/books/'
-const list = document.querySelector('.list')
+import { listTopBooks } from './categories-render.js';
+
+const baseUrl = 'https://books-backend.p.goit.global/books/';
+const list = document.querySelector('.list');
+
 async function fetchBook(category) {
   try {
-   
     const { data } = await axios(`${baseUrl}category?category=${category}`);
     console.log(category);
     const markupCategory = data.map(({ author, title, book_image }) => {
@@ -18,14 +19,17 @@ async function fetchBook(category) {
         </li>`;
     });
 
-
-    console.log(markupCategory);
-    list.innerHTML = markupCategory.join('');
- 
+    listTopBooks.innerHTML = ""; 
+    const words = category.split(' ');
+    const lastWord = words[words.length - 1];
+    const firstWords = words.slice(0, -1).join(' ');
+    listTopBooks.insertAdjacentHTML('afterbegin', `<h1><span class="world1">${firstWords}</span> <span class="world-last">${lastWord}</span></h1>`);
+    listTopBooks.innerHTML = markupCategory.join('');
 
   } catch (error) {
     throw error;
   }
 }
 
-export{fetchBook}
+export { fetchBook };
+

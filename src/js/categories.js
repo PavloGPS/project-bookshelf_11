@@ -1,15 +1,10 @@
 
 import axios from "axios";
 import { listTopBooks } from './categories-render.js'
-import { markupCollections} from './categories-render'
 import { fetchTopBooks } from "./categories-render.js";
 import{BAZA_URL} from './categories-render.js'
-const galleryList = document.querySelector('.gallery');
-// const  categoryList = document.querySelector('.category-list');
+const galleryList = document.querySelector('.category-list');
 const baseUrl = 'https://books-backend.p.goit.global/books/';
-// const linkAllcategories=galleryList.querySelector('.allCategories')
-// const allCategories = document.querySelector('.all-categories')
-// const dsa=document.querySelector('.dsa')
 const allItems = "All categories"
 async function fetchCategories() {
   try {
@@ -45,7 +40,7 @@ async function fetchBooksByCategory(category) {
   try {
     const categories = await fetchCategories();
     const listItems = categories.map(category => `<li class='item'><a class='allCategories' href="#">${category}</a></li>`);
-    
+
     galleryList.innerHTML = `<li><a class='allCategories'href="#">${allItems}</a></li>${listItems.join('')}`;
   } catch (error) {
     console.error('Помилка:', error);
@@ -60,13 +55,19 @@ const linkAllcategories=galleryList.querySelector('.allCategories')
 console.log(linkAllcategories)
 galleryList.addEventListener('click', async (event) => {
   if (event.target.tagName === 'A') {
+    const categoryTitle = document.getElementById('categoryTitle');
+    if (categoryTitle) {
+      categoryTitle.remove();
+    }
+    
+    listTopBooks.innerHTML = "";
     const category = event.target.textContent;
+    const words = category.split(' ');
+    const lastWord = words[words.length - 1];
+    const firstWords = words.slice(0, -1).join(' ');
+    
+    listTopBooks.insertAdjacentHTML('afterbegin', `<h1><span class="world1">${firstWords}</span> <span class="world-last">${lastWord}</span></h1>`);
     await fetchBooksByCategory(category);
-// listTopBooks.innerHTML=""
   }
 });
-
-
-
 export { fetchBooksByCategory};
-

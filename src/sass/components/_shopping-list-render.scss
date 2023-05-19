@@ -9,6 +9,9 @@ line-height: 52px;
 letter-spacing: -0.04em;
 
 margin-bottom: 40px;
+margin-top: 112px;
+margin-left: 40px;
+
 
 @media screen and (max-width: $tablet) {
      
@@ -214,6 +217,8 @@ position: relative;
       margin-top: 14px;
       margin-left: 0;
     }
+
+    
     
   }
 
@@ -244,7 +249,8 @@ color: $category-color-lm;
       width: 265px;
       height: 198px;
       margin-top: 14px;
-      margin-left: 0;
+      margin-left: auto;
+      margin-right: auto;
     }
 
   }
@@ -270,13 +276,54 @@ color: $category-color-lm;
   width: 350px;
   align-items: center;
   margin-top: 140px;
-  margin-left: auto;
-  margin-right: auto;
 
   @media screen and (max-width: $tablet) {
 
     width: 265px;
     margin-top: 120px;
+    margin-left: 0;
+
   }
 }
+}
+
+.main-shopping-list{
+  display: flex;
+
+}
+
+.book-empty-list{
+  margin-left: auto;
+  margin-right: auto;
+
+  @media screen and (max-width: $tablet) {
+ 
+    margin-left: 0;;
+   }
+}
+
+
+.book-empty-description{
+  width: 349px;
+  @media screen and (max-width: $tablet) {
+      
+    margin-left: auto;
+    margin-right: auto;
+   }
+}
+
+.all-shopping-list{
+  width: 100%;
+  max-width: 1200px;
+}
+
+.book-empty-img{
+  @media screen and (max-width: $tablet) {
+      
+    margin-left: auto;
+    margin-right: auto;
+   }
+  .book-empty-description{
+    color: $category-color-lm;
+  }
 }
