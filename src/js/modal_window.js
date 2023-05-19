@@ -1,5 +1,5 @@
 import { remove } from "lodash";
-import { shopsArr } from "./shops_arr";
+// import { shopsArr } from "./shops_arr";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
@@ -124,7 +124,7 @@ const shopsArr = [
       
   },
   {
-    title: 'Book',
+    title: 'Apple Books',
     url: 'https://www.apple.com/apple-books/',
     img: appleURL,
   },
@@ -135,8 +135,9 @@ const shopsArr = [
   },
 ];
 
+
 function createBookMarkup({ author, book_image, description, title, _id, buy_links }) {
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
   const isInShoppingList = shoppingList.some(item => item.id === _id);
   const linksToShow = [0, 1, 4];
   const buyLinks = buy_links.filter((link, index) =>
