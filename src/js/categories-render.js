@@ -1,7 +1,7 @@
 
 import axios from "axios";
 import { fetchBook } from './see_more.js';
-// import { serviceDetailInfo } from './modal_window.js';
+import { serviceDetailInfo,createBookMarkup,Modal } from './modal_window.js';
 
 const listTopBooks = document.querySelector(".book-list");
 const BAZA_URL = "https://books-backend.p.goit.global/books/top-books";
@@ -21,12 +21,12 @@ async function fetchTopBooks(url, listElement) {
     console.log(data);
 
     markupCollections = data.map(({ list_name, books }) => {
-      const markupBooks = books.map(({ author, title, book_image }) => {
-        const truncatedTitle = truncateText(title, 20); 
+      const markupBooks = books.map(({ author, title, book_image,_id }) => {
+        const truncatedTitle = truncateText(title, 20);
         const truncatedAuthor = truncateText(author, 40);
 
         return `
-          <li class='item-book'>
+          <li id=${_id} class='item-book'>
             <a class="link" href="#">
               <img class="img-book" src="${book_image}" alt="книга" width='180px' height='256px' loading="lazy" />
             </a>
@@ -53,7 +53,7 @@ async function fetchTopBooks(url, listElement) {
     btns.forEach(btn => {
       btn.addEventListener('click', () => {
         fetchBook(btn.dataset.category);
-        
+       
       });
     });
   } catch (error) {
@@ -66,5 +66,29 @@ async function getCollectionBooks() {
 }
 
 getCollectionBooks();
+
+listTopBooks.addEventListener('click', (event) => {
+  event.preventDefault()
+  const liElement = event.target.closest('li');
+  if (liElement) {
+    const itemId = liElement.id;
+    serviceDetailInfo(itemId)
+      .then(data => {
+        // обробка даних
+      })
+      .catch(error => {
+        // обробка помилки
+      });
+
+    // Ви можете використовувати клас Modal
+    const modalInstance = new Modal();
+    modalInstance.create(createBookMarkup);
+    modalInstance.open(itemId);
+  }
+});
+
+
+
+
 
 export { listTopBooks, BAZA_URL, fetchTopBooks, markupCollections };
