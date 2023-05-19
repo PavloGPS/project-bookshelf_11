@@ -40,8 +40,8 @@ async function fetchTopBooks(url, listElement) {
 
       return `
         <div class="collection" data-category="${list_name}">
-          <h3>${list_name}</h3>
-          <ul>${markupBooks}</ul>
+          <h3 class="categories-render-name-list">${list_name}</h3>
+          <ul class="categories-render-list">${markupBooks}</ul>
           <button class="see_more" type="button" data-category="${list_name}">See More</button>
         </div>
       `;

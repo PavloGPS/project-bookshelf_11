@@ -327,3 +327,14 @@ color: $category-color-lm;
     color: $category-color-lm;
   }
 }
+
+
+
+.support-shopping-list{
+  visibility: visible;
+// margin-top: 112px;
+  @media screen and (max-width: $tablet){
+    visibility: hidden;
+  }
+  
+}
