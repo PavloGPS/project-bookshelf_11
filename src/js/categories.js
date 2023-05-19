@@ -15,6 +15,13 @@ async function fetchCategories() {
     throw error;
   }
 }
+function truncateText(text, maxLength) {
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return text.substring(0, maxLength - 3) + '...';
+}
 
 
 async function fetchBooksByCategory(category) {
@@ -74,4 +81,4 @@ galleryList.addEventListener('click', async (event) => {
     await fetchBooksByCategory(category);
   }
 });
-export { fetchBooksByCategory};
+export { fetchBooksByCategory,};
