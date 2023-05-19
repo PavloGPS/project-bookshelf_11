@@ -21,7 +21,7 @@ async function fetchTopBooks(url, listElement) {
     markupCollections = data.map(({ list_name, books }) => {
       const markupBooks = books.map(({ author, title, book_image,_id }) => {
         const truncatedTitle = truncateText(title, 20);
-        const truncatedAuthor = truncateText(author, 40);
+        const truncatedAuthor = truncateText(author, 30);
 
         return `
           <li id=${_id} class='item-book'>
@@ -38,8 +38,8 @@ async function fetchTopBooks(url, listElement) {
 
       return `
         <div class="collection" data-category="${list_name}">
-          <h3>${list_name}</h3>
-          <ul>${markupBooks}</ul>
+          <h3 class="categories-render-name-list">${list_name}</h3>
+          <ul class="categories-render-list">${markupBooks}</ul>
           <button class="see_more" type="button" data-category="${list_name}">See More</button>
         </div>
       `;
