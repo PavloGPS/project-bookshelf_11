@@ -72,15 +72,94 @@ $desktop: 1199.97px;
   padding-bottom: 68px;
   padding-left: 40px;
   padding-right: 58px;
-  margin-top: 112px;
+  
 
   @media screen and (min-width: $tablet) {
-    padding-bottom: 84px;}
-
-    @media screen and (max-width: $tablet) {
-      display: none;
-        
+    padding-bottom: 84px;
+    margin-top: 112px;
   }
+
+    @media screen and (max-width: $desktop) {
+      width: 356px;
+      
+
+    }
+
+}
+
+
+
+
+.swiper-up-btn {
+  position: absolute;
+  top: 60px;
+  left: 151px;
+  
+ 
+  background-color: $btn-support-color;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+
+
+
+  @media screen and (min-width: $tablet) {
+    width: 38px;
+    height: 38px;}
+}
+
+.swiper__scroll-up {
+  width: 20px;
+  height: 20px;
+  fill:$secondary-color;
+  z-index: 9999;
+
+  @media screen and (min-width: $tablet) {
+    width: 22px;
+    height: 22px;}
+}
+
+
+.swiper-down-btn {
+  background-color: $btn-support-color;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  display: block;
+  position: absolute;
+  bottom: 20px;
+  left: 151px;
+
+  @media screen and (min-width: $tablet) {
+    width: 38px;
+    height: 38px;}
+  
+}
+
+.swiper__scroll-down{
+  width: 20px;
+  height: 20px;
+  fill:$secondary-color;
+  position: absolute;
+  top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    z-index: 999;
+
+    @media screen and (min-width: $tablet) {
+      width: 22px;
+      height: 22px;}
+}
+.title__trident{
+  width: 20px;
+  height: 32px;
+  fill: $btn-support-color;
+  z-index: 99;
 }
 
 

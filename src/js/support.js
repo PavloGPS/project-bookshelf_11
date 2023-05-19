@@ -58,3 +58,19 @@ foundatiionsArr.forEach(foundation => {
 
 
 updateScrollButtons();
+
+const ShoppingListLink = document.querySelector('[data-page="shpng-list"]');
+const supportDiv = document.querySelector('.support');
+
+function handleWindowResize() {
+  if (window.innerWidth >= 767.98) {
+    supportDiv.style.display = 'block';
+  } else {
+    supportDiv.style.display = 'none';
+  }
+}
+
+if (ShoppingListLink) {
+  window.addEventListener('resize', handleWindowResize);
+  handleWindowResize();
+}
