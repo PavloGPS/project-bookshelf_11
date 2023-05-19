@@ -2,6 +2,7 @@
 import axios from "axios";
 import { listTopBooks } from './categories-render.js'
 import { fetchTopBooks } from "./categories-render.js";
+import {serviceDetailInfo} from './modal_window.js'
 import{BAZA_URL} from './categories-render.js'
 const galleryList = document.querySelector('.category-list');
 const baseUrl = 'https://books-backend.p.goit.global/books/';
@@ -27,10 +28,10 @@ function truncateText(text, maxLength) {
 async function fetchBooksByCategory(category) {
   try {
     const { data } = await axios(`${baseUrl}category?category=${category}`);
-    const markupCategory=data.map(({ author, title,book_image }) => {
+    const markupCategory=data.map(({ author, title,book_image,_id }) => {
      const truncatedTitle = truncateText(title, 20); 
         const truncatedAuthor = truncateText(author, 40);
- return `<li>
+ return `<li id=${_id}>
           <a class="link" href="${book_image}">
             <img class="img" src="${book_image}" alt="книга" width="180px" height="256px" loading="lazy" />
           </a>
@@ -81,4 +82,16 @@ galleryList.addEventListener('click', async (event) => {
     await fetchBooksByCategory(category);
   }
 });
-export { fetchBooksByCategory};
+
+listTopBooks.addEventListener('click', (event) => {
+event.preventDefault()
+  const liElement = event.target.closest('li');
+  if (liElement) {
+    const itemId = liElement.id;
+    serviceDetailInfo(itemId);
+    console.log(itemId)
+   
+  }
+});
+
+export { fetchBooksByCategory };
