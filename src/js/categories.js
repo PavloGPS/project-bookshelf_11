@@ -82,7 +82,7 @@ galleryList.addEventListener('click', async (event) => {
     await fetchBooksByCategory(category);
   }
 });
-
+export let itemId;
 listTopBooks.addEventListener('click', (event) => {
 event.preventDefault()
   const liElement = event.target.closest('li');

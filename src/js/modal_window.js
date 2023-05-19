@@ -113,31 +113,25 @@ class Modal {
     this.actionData='action';
   }
 }
-
+import amazonURL from '../images/modal/amazon.png';
+import appleURL from '../images/modal/book.png';
+import booksURL from '../images/modal/amazon.png';
 const shopsArr = [
   {
     title: 'Amazon',
     url: 'https://www.amazon.com/',
-    img: {
-      regular: require('../images/modal/amazon.png'),
-      retina: require('../images/modal/amazon@2x.png'),
-    },
+    img: amazonURL,
+      
   },
   {
     title: 'Book',
     url: 'https://www.apple.com/apple-books/',
-    img: {
-      regular: require('../images/modal/book.png'),
-      retina: require('../images/modal/book@2x.png'),
-    },
+    img: appleURL,
   },
   {
     title: 'Books',
     url: '',
-    img: {
-      regular: require('../images/modal/books.png'),
-      retina: require('../images/modal/books@2x.png'),
-    },
+    img: booksURL,
   },
 ];
 
@@ -170,7 +164,7 @@ function createBookMarkup({ author, book_image, description, title, _id, buy_lin
                 </a>
               </li>`
           )
-          .join('')}
+          .join('')}          
       </ul>
     </div>
   </div>
