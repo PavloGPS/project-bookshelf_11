@@ -24,4 +24,6 @@ const shopsArr=[
         retina: new URL('../images/modal/books@2x.png', import.meta.url),
       },
     }
-  ]
+]
+  
+export { shopsArr };
