@@ -70,4 +70,5 @@ galleryList.addEventListener('click', async (event) => {
     await fetchBooksByCategory(category);
   }
 });
-export { fetchBooksByCategory};
+export { fetchBooksByCategory };
+console.log('sad')
