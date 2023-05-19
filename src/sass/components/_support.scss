@@ -72,15 +72,15 @@ $desktop: 1199.97px;
   padding-bottom: 68px;
   padding-left: 40px;
   padding-right: 58px;
-  margin-top: 112px;
+  
 
   @media screen and (min-width: $tablet) {
     padding-bottom: 84px;}
 
-    @media screen and (max-width: $tablet) {
-      display: none;
+  //   @media screen and (max-width: $tablet) {
+  //     display: none;
         
-  }
+  // }
 }
 
 
