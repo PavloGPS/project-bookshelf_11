@@ -145,7 +145,7 @@ function createBookMarkup({ author, book_image, description, title, _id, buy_lin
   );
   const shopImages = shopsArr.map(shop => shop.img.regular);
   
-  return `<div class="modal-content">
+  return `<div class="modal-content"'>
     <img src="${book_image}" width="287" height="408" alt="${title}" class="book-image" />
     <div class="book-details">
       <h2 class="modal-title">${title}</h2>
