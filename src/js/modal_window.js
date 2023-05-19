@@ -34,14 +34,17 @@ serviceDetailInfo('643282b1e85766588626a087')
         e.target.innerText = 'ADD TO SHOPPING LIST';
       }
       
-      if (e.target.dataset.action === 'remove') {
-        const message = document.createElement('span');
-        message.innerText = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
-         message.classList.add('remove-message');
-        e.target.insertAdjacentElement('afterend', message);
-      } else {
-        remove;
-      }
+    if (e.target.dataset.action === 'remove') {
+  const message = document.createElement('span');
+  message.innerText = 'Сongratulations! You have added the book to the shopping list. To delete, press the button “Remove from the shopping list”.';
+  message.classList.add('remove-message');
+  e.target.insertAdjacentElement('afterend', message);
+} else {
+  const removeMessage = document.querySelector('.remove-message');
+  if (removeMessage) {
+    removeMessage.remove();
+  }
+}
     });
   })
   .catch(error => console.log(error));
