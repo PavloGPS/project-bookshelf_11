@@ -1,6 +1,6 @@
 import { remove } from "lodash";
 import { shopsArr } from "./shops_arr";
-
+import { itemId } from "./categories-render.js";
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
 
@@ -11,7 +11,7 @@ async function serviceDetailInfo(id) {
   return response.json();
 }
 
-serviceDetailInfo('643282b1e85766588626a087')
+serviceDetailInfo(itemId)
   .then(data => {
     const instance = new Modal();
     instance.create(createBookMarkup(data));
