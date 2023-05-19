@@ -220,5 +220,18 @@ display: flex;
 }
 
 .shop-image {
-  color: transparent;
+   
+    /* Прозорість зображення */
+    transition: opacity 0.3s ease-in-out;
+    /* Плавний перехід при зміні прозорості */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    /* Тінь */
+
+    &:hover,
+&:focus {
+  opacity: 1;
+    /* Змінюємо прозорість на повну */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
+    /* Змінюємо тінь */
 }
+  }
