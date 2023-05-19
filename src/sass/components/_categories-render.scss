@@ -4,59 +4,18 @@ $desktop: 1199.97px;
 
 
 
-.book-list{
+.categories-render-list{
 @media screen and (min-width:$tablet) {
     display: flex;
     flex-wrap: wrap;
-    gap: 25px;
-    
+    gap: 24px;
+}
+@media screen and (min-width:$desktop) {
+  
+  flex-wrap: nowrap;
+  gap: 24px;}
+}
 
-}}
-
-
-
-
-
-// .title-book{
-//    color: #111111;
-// font-family: DM Sans;
-//     font-size: 16px;
-//     font-weight: 700;
-   
-    
-// }
-
-
-// .img-book{
-//     width: 100%;
-//     height: 485px;
-// }
-
-
-// .author-dook{
-//    color: #B4AFAF;
-// font-family: DM Sans;
-//     font-size: 14px;
-//     font-weight: 400;
-//     line-height: 18px;
-//     letter-spacing: 0.03em;
-
-
-// }
-// .img-book{
-//     align-items: center;
-// }
-
-// .title-categories{
-//     color: #111111;
-//  font-size: 32px;
-// font-family: DM Sans;
-//     font-size: 32px;
-//     font-weight: 700;
-//   padding-top:40px;
-//   padding-bottom: 40px;
-   
-// }
 
 .title-categories{
   font-family: DM Sans sans-serif;
@@ -81,13 +40,20 @@ color:$secondary-color;
 .item-book{
   display: block;
   flex-direction: column;
+  
   margin-bottom: 8px;
+  
   
   @media screen and (min-width: 768px) {
     margin-bottom: 14px;
-  
+  width: 218px;
     }
 
+    @media screen and (min-width: 1200px) {
+      margin-bottom: 14px;
+    width: 180px;
+    
+    }
 
   
 }
@@ -155,21 +121,24 @@ border-radius: 40px;
 
 
 
-@media screen and (max-width: 767px) {
 
 
-.categorie__for__mobile{
-font-weight: 400;
-font-size: 14px;
-line-height: 1.29;
-color: $subtitle-color;
-letter-spacing: 0.03em;
-}
-
-}
 // .wrap-name {
 //   width:335px;
 //   white-space: nowrap;
 //   overflow: hidden;
 //   text-overflow: ellipsis;
 // }
+
+.categories-render-name-list{
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.29;
+  color: $subtitle-color;
+  letter-spacing: 0.03em;
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.71;
+    }
+
+}

@@ -1,5 +1,5 @@
 import { remove } from "lodash";
-import { shopsArr } from "./shops_arr";
+// import { shopsArr } from "./shops_arr";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
@@ -113,36 +113,31 @@ class Modal {
     this.actionData='action';
   }
 }
-
+import amazonURL from '../images/modal/amazon.png';
+import appleURL from '../images/modal/book.png';
+import booksURL from '../images/modal/amazon.png';
 const shopsArr = [
   {
     title: 'Amazon',
     url: 'https://www.amazon.com/',
-    img: {
-      regular: require('../images/modal/amazon.png'),
-      retina: require('../images/modal/amazon@2x.png'),
-    },
+    img: amazonURL,
+      
   },
   {
-    title: 'Book',
+    title: 'Apple Books',
     url: 'https://www.apple.com/apple-books/',
-    img: {
-      regular: require('../images/modal/book.png'),
-      retina: require('../images/modal/book@2x.png'),
-    },
+    img: appleURL,
   },
   {
     title: 'Books',
     url: '',
-    img: {
-      regular: require('../images/modal/books.png'),
-      retina: require('../images/modal/books@2x.png'),
-    },
+    img: booksURL,
   },
 ];
 
+
 function createBookMarkup({ author, book_image, description, title, _id, buy_links }) {
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
   const isInShoppingList = shoppingList.some(item => item.id === _id);
   const linksToShow = [0, 1, 4];
   const buyLinks = buy_links.filter((link, index) =>
@@ -170,7 +165,7 @@ function createBookMarkup({ author, book_image, description, title, _id, buy_lin
                 </a>
               </li>`
           )
-          .join('')}
+          .join('')}          
       </ul>
     </div>
   </div>
