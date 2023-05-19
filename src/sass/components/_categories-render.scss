@@ -81,6 +81,8 @@ color:$secondary-color;
   display: block;
   flex-direction: column;
   margin-bottom: 8px;
+  width: 335px;
+  height: 535px;
   @media screen and (min-width: 768px) {
     margin-bottom: 14px;
   
@@ -96,8 +98,8 @@ color:$secondary-color;
   border-radius: 8px;
   margin-bottom:14px;
   max-width: 100%;
-  width: 335px;
-  height: 485px;
+  
+  height: auto;
 
   @media screen and (min-width: 768px) {
     width: 218px;
