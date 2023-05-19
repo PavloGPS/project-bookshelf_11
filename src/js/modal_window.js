@@ -53,6 +53,8 @@ serviceDetailInfo('643282b1e85766588626a087')
 class Modal {
   constructor() {
     this.visible = false;
+    this.currentId='';
+    this.actionData='add or remove'
   }
   create(markup) {
     const html = `<div class="overlay js-module-overlay js-close">
@@ -102,6 +104,13 @@ class Modal {
   cleanEvent() {
     document.removeEventListener('keydown', this.cleanerEscape);
     this.visible = false;
+  }
+
+  setCurrentId(id){
+    this.currentId=id;
+  }
+  setActionData(action){
+    this.actionData='action';
   }
 }
 
