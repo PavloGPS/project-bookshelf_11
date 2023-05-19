@@ -20,18 +20,4 @@ function cropDescription(string) {
   }
 }
 
-const description = "Це є опис";
-const croppedDescription = cropDescription(description);
-console.log(croppedDescription); // Виведе "Це є опис"
-
-// Приклад для мобільного пристрою з шириною viewport 320px
-const longDescriptionMobile = "Це є довгий опис, який потрібно обрізати для мобільного пристрою";
-const croppedLongDescriptionMobile = cropDescription(longDescriptionMobile);
-console.log(croppedLongDescriptionMobile); // Виведе "Це є довгий..."
-
-// Приклад для планшета з шириною viewport 768px
-const longDescriptionTablet = "Це є довгий опис, який потрібно обрізати для планшета";
-const croppedLongDescriptionTablet = cropDescription(longDescriptionTablet);
-console.log(croppedLongDescription);
-
 export { cropDescription };

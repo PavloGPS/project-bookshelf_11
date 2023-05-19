@@ -1,7 +1,6 @@
 import Notiflix from "notiflix";
 import { shopsArr } from "./shops_arr";
 import svgBasketUrl from "../images/sprite.svg";
-import { cropDescription } from "./cut-function";
 
 const shoppingList =
   JSON.parse(localStorage.getItem('localShoppingList')) || [];
