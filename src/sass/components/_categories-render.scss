@@ -9,6 +9,7 @@ $desktop: 1199.97px;
     display: flex;
     flex-wrap: wrap;
     gap: 25px;
+    
 
 }}
 
@@ -81,6 +82,7 @@ color:$secondary-color;
   display: block;
   flex-direction: column;
   margin-bottom: 8px;
+  
   @media screen and (min-width: 768px) {
     margin-bottom: 14px;
   
@@ -121,9 +123,9 @@ letter-spacing: -0.04em;
 
 margin-bottom: 4px;
 white-space: nowrap;
-overflow: hidden;
 text-overflow: ellipsis;
-
+overflow: hidden;
+white-space:nowrap;
 }
 
 .author-dook{
@@ -165,3 +167,9 @@ letter-spacing: 0.03em;
 }
 
 }
+// .wrap-name {
+//   width:335px;
+//   white-space: nowrap;
+//   overflow: hidden;
+//   text-overflow: ellipsis;
+// }
