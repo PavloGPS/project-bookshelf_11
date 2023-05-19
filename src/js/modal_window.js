@@ -1,4 +1,4 @@
-import { remove } from "lodash";
+import { cropDescription } from "./cut-function";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
