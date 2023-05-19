@@ -1,4 +1,6 @@
 import Notiflix from "notiflix";
+import { shopsArr } from "./shops_arr";
+ import svgBasketUrl from "../images/sprite.svg";
 
 const shoppingList =
   JSON.parse(localStorage.getItem('localShoppingList')) || [];
@@ -47,7 +49,7 @@ if (shoppingList.length > 0) {
       </div>
       <button class="basket-btn">
         <svg class="basket-img" width="14px" height="14px">
-        <use href="./images/sprite.svg#basket"></use>
+        <use href="${svgBasketUrl}#basket"></use>
         </svg>
       </button>
     </li>
@@ -86,5 +88,6 @@ window.addEventListener('message', event => {
     );
   }
 });
+
 
 
