@@ -1,9 +1,13 @@
 import Notiflix from "notiflix";
+import svgBasketUrl from "../images/sprite.svg";
+
+const images = ["amazon.png", "apple books.png", "bookshop.png"];
+console.log(images);
 
 const shoppingList =
-  JSON.parse(localStorage.getItem('localShoppingList')) || [];
+  JSON.parse(localStorage.getItem("localShoppingList")) || [];
 
-const bookListEl = document.querySelector('.book-list');
+const bookListEl = document.querySelector(".book-list");
 if (shoppingList.length > 0) {
   bookListEl.innerHTML = shoppingList
     .map(({ book_image, title, list_name, description, author, buy_links }) => {
@@ -17,7 +21,7 @@ if (shoppingList.length > 0) {
       <img class="book-img" src="${
         book_image
           ? book_image
-          : 'https://kartinki.pibig.info/uploads/posts/2023-04/thumbs/1681549841_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-4.jpg'
+          : "https://kartinki.pibig.info/uploads/posts/2023-04/thumbs/1681549841_kartinki-pibig-info-p-zaglushka-kartinka-arti-krasivo-4.jpg"
       }" alt="${title}"/>
       <div class="book-inform">
         <div class="titlle-basket">
@@ -30,31 +34,38 @@ if (shoppingList.length > 0) {
         <p class="book-description">${
           description
             ? description
-            : 'Sorry, there is currently no description for this book.'
+            : "Sorry, there is currently no description for this book."
         }
         </p>
         <div class="author-shops">
           <h4 class="book-author">${author}</h4>
           <ul class="book-shops">
-          ${buyLinks
-              .map(
-                ({ name, url }) =>
-                  `<li><a href=${url} target="_blank">${name}</a></li>`
-              )
-              .join('')}
+        
+  ${buyLinks
+    .map(({ name, url }, index) => {
+      const image = images[index];
+      let imageElement = "";
+      images.forEach(img => {
+        if (img.includes(name.toLowerCase())) {
+          imageElement = `<img src="${img}" alt="${name}"> `;
+        }
+      });
+      return `<li><a href=${url} target="_blank">${imageElement}</a></li>`;
+    })
+    .join("")}
           </ul>
-        </div> 
+        </div>
       </div>
       <button class="basket-btn">
         <svg class="basket-img" width="14px" height="14px">
-        <use href="./images/sprite.svg#basket"></use>
+        <use href="${svgBasketUrl}#basket"></use>
         </svg>
       </button>
     </li>
   </ul>
         `;
     })
-    .join('');
+    .join("");
 } else {
   bookListEl.innerHTML = `
     <div class="book-empty-list">
@@ -67,24 +78,22 @@ if (shoppingList.length > 0) {
      `;
 }
 
-const removeBookButtons = document.querySelectorAll('.basket-btn');
+const removeBookButtons = document.querySelectorAll(".basket-btn");
 
 removeBookButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
+  button.addEventListener("click", () => {
     shoppingList.splice(index, 1);
-    localStorage.setItem('localShoppingList', JSON.stringify(shoppingList));
+    localStorage.setItem("localShoppingList", JSON.stringify(shoppingList));
     button.parentElement.remove();
-    window.parent.postMessage('success', '*');
+    window.parent.postMessage("success", "*");
   });
 });
 
-window.addEventListener('message', event => {
-  if (event.data === 'success') {
+window.addEventListener("message", event => {
+  if (event.data === "success") {
     Notiflix.Notify.info(
-      'The selected book has been successfully removed from the shopping list.',
-      { position: 'center-center' }
+      "The selected book has been successfully removed from the shopping list.",
+      { position: "center-center" }
     );
   }
 });
-
-
