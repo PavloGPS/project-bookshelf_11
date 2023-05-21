@@ -77,10 +77,10 @@ $desktop: 1199.97px;
 
   @media screen and (min-width: $tablet) {
     padding-bottom: 84px;
-    margin-top: 112px;
+    
   }
 
-    @media screen and (max-width: $desktop) {
+    @media screen and (min-width: $desktop) {
       width: 356px;
       
 
@@ -245,4 +245,27 @@ $desktop: 1199.97px;
   height: 32px;
   fill: $btn-support-color;
   z-index: 99;
+}
+// Стилі вище - не міняти
+
+// Стилі для приховування support Ukraine на shoppping list
+.hide-support {
+  display: none;
+}
+
+.support-wrap{
+    display: block;
+  }
+
+
+@media (max-width:  1199.97px) {
+  .support-wrap-container {
+    display: none;
+  }
+
+}
+
+
+.support-wrap.categories-wrap{
+  margin-top: 104px;
 }
