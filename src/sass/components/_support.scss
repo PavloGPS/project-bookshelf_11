@@ -72,6 +72,7 @@ $desktop: 1199.97px;
   padding-bottom: 68px;
   padding-left: 40px;
   padding-right: 58px;
+
   
 
   @media screen and (min-width: $tablet) {
@@ -160,8 +161,17 @@ $desktop: 1199.97px;
   height: 32px;
   fill: $btn-support-color;
   z-index: 99;
+
 }
 
+
+.hide-support{
+  display: block;
+  margin-top: 112px;
+  @media screen and (max-width: $tablet) {
+   display: none;
+  }
+}
 
 
 
