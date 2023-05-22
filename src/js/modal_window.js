@@ -1,4 +1,6 @@
 import { cropDescription } from "./cut-function";
+import { remove } from "lodash";
+import { shopsArr } from "./shops_arr";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
@@ -52,6 +54,8 @@ serviceDetailInfo('643282b1e85766588626a087')
 class Modal {
   constructor() {
     this.visible = false;
+    this.currentId='';
+    this.actionData='add or remove'
   }
   create(markup) {
     const html = `<div class="overlay js-module-overlay js-close">
@@ -102,44 +106,57 @@ class Modal {
     document.removeEventListener('keydown', this.cleanerEscape);
     this.visible = false;
   }
+
+  setCurrentId(id){
+    this.currentId=id;
+  }
+  setActionData(action){
+    this.actionData='action';
+  }
 }
 
+
 function createBookMarkup({ author, book_image, description, title, _id, buy_links }) {
-  const shoppingList = JSON.parse(localStorage.getItem('shoppingList') || '[]');
+  const shoppingList = JSON.parse(localStorage.getItem('shoppingList')) || [];
   const isInShoppingList = shoppingList.some(item => item.id === _id);
-  // buyLinks - code by Vadim
   const linksToShow = [0, 1, 4];
-      const buyLinks = buy_links.filter((link, index) =>
-        linksToShow.includes(index)
-      );
+  const buyLinks = buy_links.filter((link, index) =>
+    linksToShow.includes(index)
+  );
+  const shopImages = shopsArr.map(shop => shop.img.regular);
+  
   return `<div class="modal-content">
-  <img src="${book_image}" width="287" height="408" alt="${title}" class="book-image" />
-  <div class="book-details">
-    <h2 class="modal-title">${title}</h2>
-    <p class="author">${author}</p>
-    <p class="description">${
-      description
-        ? description
-        : 'We are sorry, we have no description of this book.'
-    }
-    </p>
-    <ul class="book-shops">
-          ${buyLinks
-              .map(
-                ({ name, url }) =>
-                  `<li><a href=${url} target="_blank">${name}</a></li>`
-              )
-              .join('')}
-          </ul>
+    <img src="${book_image}" width="287" height="408" alt="${title}" class="book-image" />
+    <div class="book-details">
+      <h2 class="modal-title">${title}</h2>
+      <p class="author">${author}</p>
+      <p class="description">${
+        description
+          ? description
+          : 'We are sorry, we have no description of this book.'
+      }</p>
+      <ul class="book-shops">
+        ${buyLinks
+          .map(
+            ({ name, url }, index) =>
+              `<li>
+                <a href=${url} target="_blank">
+                  <img src="${shopImages[index]}" alt="${name}" class="shop-image" />
+                </a>
+              </li>`
+          )
+          .join('')}          
+      </ul>
+    </div>
   </div>
-</div>
-<button
-data-id="${_id}"
-data-action="${isInShoppingList ? 'remove' : 'add'}"
-type="button"
-class="add-to-cart-btn">
-${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'}
-</button>`;
+  <button
+    data-id="${_id}"
+    data-action="${isInShoppingList ? 'remove' : 'add'}"
+    type="button"
+    class="add-to-cart-btn"
+  >
+    ${isInShoppingList ? 'REMOVE FROM THE SHOPPING LIST' : 'ADD TO SHOPPING LIST'}
+  </button>`;
 }
 
 export { Modal };
