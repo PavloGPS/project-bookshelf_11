@@ -1,29 +1,27 @@
-const shopsArr=[
-    {
-      title: 'Amazon',
-      url:
-        'https://www.amazon.com/',
-        img: {
-          regular: new URL('../images/modal/amazon.png', import.meta.url),
-          retina: new URL('../images/modal/amazon@2x.png', import.meta.url),
-        },
+const shopsArr = [
+  {
+    title: 'Amazon',
+    url: 'https://www.amazon.com/',
+    img: {
+      regular: require('../images/modal/amazon.png'),
+      retina: require('../images/modal/amazon@2x.png'),
     },
-    {
-      title: 'Book',
-      url: 'https://www.apple.com/apple-books/',
-      img: {
-        regular: new URL('../images/modal/book.png', import.meta.url),
-        retina: new URL('../images/modal/book@2x.png', import.meta.url),
-      },
+  },
+  {
+    title: 'Apple Books',
+    url: 'https://www.apple.com/apple-books/',
+    img: {
+      regular: require('../images/modal/book.png'),
+      retina: require('../images/modal/book@2x.png'),
     },
-    {
-      title: 'Books',
-      url: '',
-      img: {
-        regular: new URL('../images/modal/books.png', import.meta.url),
-        retina: new URL('../images/modal/books@2x.png', import.meta.url),
-      },
-    }
-]
-  
+  },
+  {
+    title: 'Books',
+    url: '',
+    img: {
+      regular: require('../images/modal/books.png'),
+      retina: require('../images/modal/books@2x.png'),
+    },
+  },
+];  
 export { shopsArr };
