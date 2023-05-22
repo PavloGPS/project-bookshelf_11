@@ -26,13 +26,14 @@ if (shoppingList.length > 0) {
             <h4 class="book-category">${list_name}</h4>
           </div>
           
-        </div>
+        
         <p class="book-description">${
           description
             ? description
             : 'Sorry, there is currently no description for this book.'
         }
         </p>
+        </div>
         <div class="author-shops">
           <h4 class="book-author">${author}</h4>
           <ul class="book-shops">

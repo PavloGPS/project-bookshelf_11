@@ -112,16 +112,15 @@ $desktop: 1199.97px;
 
 }
 .book-inform {
- margin-top: 0;
- position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
 }
 
 .author-shops {
   display: flex;
-  position: absolute;
-  
-  bottom: 0px;
+  margin-bottom: 0;
   justify-content: space-between;
   align-items: center;
 
