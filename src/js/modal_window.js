@@ -1,3 +1,4 @@
+import { cropDescription } from "./cut-function";
 import { remove } from "lodash";
 import { shopsArr } from "./shops_arr";
 
