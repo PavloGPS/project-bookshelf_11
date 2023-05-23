@@ -135,11 +135,11 @@ function createBookMarkup({ author, book_image, description, title, _id, buy_lin
           ? description
           : 'We are sorry, we have no description of this book.'
       }</p>
-      <ul class="book-shops">
+      <ul class="book-platforms">
         ${buyLinks
           .map(
             ({ name, url }, index) =>
-              `<li>
+              `<li class="platforms-list">
                 <a href=${url} target="_blank">
                   <img src="${shopImages[index]}" alt="${name}" class="shop-image" />
                 </a>
