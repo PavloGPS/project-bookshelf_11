@@ -1,5 +1,6 @@
+import { cropDescription } from "./cut-function";
 import { remove } from "lodash";
-// import { shopsArr } from "./shops_arr";
+import { shopsArr } from "./shops_arr";
 
 async function serviceDetailInfo(id) {
   const URL = `https://books-backend.p.goit.global/books/${id}`;
@@ -113,27 +114,6 @@ class Modal {
     this.actionData='action';
   }
 }
-import amazonURL from '../images/modal/amazon.png';
-import appleURL from '../images/modal/book.png';
-import booksURL from '../images/modal/amazon.png';
-const shopsArr = [
-  {
-    title: 'Amazon',
-    url: 'https://www.amazon.com/',
-    img: amazonURL,
-      
-  },
-  {
-    title: 'Apple Books',
-    url: 'https://www.apple.com/apple-books/',
-    img: appleURL,
-  },
-  {
-    title: 'Books',
-    url: '',
-    img: booksURL,
-  },
-];
 
 
 function createBookMarkup({ author, book_image, description, title, _id, buy_links }) {
@@ -145,9 +125,9 @@ function createBookMarkup({ author, book_image, description, title, _id, buy_lin
   );
   const shopImages = shopsArr.map(shop => shop.img.regular);
   
-  return `<div class="modal-content">
+  return `<div class="modal-content"> 
     <img src="${book_image}" width="287" height="408" alt="${title}" class="book-image" />
-    <div class="book-details">
+    <div class="book-details"> 
       <h2 class="modal-title">${title}</h2>
       <p class="author">${author}</p>
       <p class="description">${
