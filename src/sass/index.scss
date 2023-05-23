@@ -27,10 +27,11 @@ $desktop: 1199.97px;
     overflow-y: hidden;
   display: flex;
   flex-direction: column;
+  margin-top: 104px;
   
 @media screen and (min-width: $tablet){
 
-    width: 337px;
+    // width: 337px;
     height: 472px;
 }
 @media screen and (min-width: $desktop) {
@@ -41,25 +42,30 @@ $desktop: 1199.97px;
 
 
 .categories-render-wrap{
+    
     display: flex;
-    margin: 40px auto;
-    width: 335px;
-     @media screen and (min-width: $tablet) {
-        width: 768px;
-        margin: 0 auto;
-     }
+
+    @media screen and (max-width: 1196px)   {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
     @media screen and (min-width: $desktop) {
         align-items: center;
-        width: 1044px;
+        
         margin: 69px 0 0 ;
         padding-top: 40px;
      }
 }
 .wrapper{
+    @media screen and (max-width: 1196px)   {
+        margin-left: auto;
+        margin-right: auto;
+    }
     display: flex;
     flex-direction: column;
-    gap: 40px;
-    margin-top: 104px;
+    gap:40px;
+    
     
     @media screen and (min-width: $tablet){
     display: flex;
@@ -70,20 +76,34 @@ $desktop: 1199.97px;
     }
     @media screen and (min-width: $desktop) {
         flex-direction: column;
-        width: 385px;
+        gap:0;
+        
      
     }
 }
 .desctop-wrapper{
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-direction: column;
+    gap: 40px;
+    
     @media screen and (min-width: $tablet){
         gap: 100px;
     }
 
 
 @media screen and (min-width: $desktop) {
-    gap: 0;
+    gap: 40px;
     flex-direction: row;
+}
+}
+.support-wrap{
+    @media screen and (min-width: $tablet){
+
+    margin-top: 104px;
+    }
+    @media screen and (min-width: $desktop){
+    margin-top: 86px;
 }
 }

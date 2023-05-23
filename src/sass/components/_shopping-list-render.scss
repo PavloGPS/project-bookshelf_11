@@ -10,7 +10,7 @@ $desktop: 1199.97px;
 
   margin-bottom: 40px;
   margin-top: 112px;
-  margin-left: 40px;
+  
 
   @media screen and (max-width: $tablet) {
     font-size: 32px;
@@ -22,35 +22,35 @@ $desktop: 1199.97px;
 }
 
 .book-card {
+  position: relative;
   display: flex;
   flex-direction: row;
-  align-items: center;
+  
   margin-bottom: 20px;
-  position: relative;
+  
 
-  width: 996px;
-  height: 213px;
-  left: 32px;
+  
+  padding: 14px;
+  
 
   background: #ffffff;
   border: 2px solid rgba(79, 46, 232, 0.4);
   border-radius: 16px;
 
-  @media screen and (max-width: $tablet) {
-    width: 704px;
+  @media screen and (min-width: $tablet) {
+    padding: 30px 24px;
+    
   }
 
   @media screen and (max-width: $mobile) {
-    width: 335px;
+    
     height: 170px;
   }
 }
 
 .book-img {
   width: 116px;
-  height: 165px;
-
-  margin: 24px;
+  margin-right: 24px;
 }
 
 .book-cover {
@@ -82,7 +82,7 @@ $desktop: 1199.97px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
 
-  margin: 24px;
+  
 
   @media screen and (max-width: $mobile) {
     width: 100px;
@@ -93,45 +93,52 @@ $desktop: 1199.97px;
 }
 
 .book-shops {
+  position: fixed;
+  
+  right: 34px;
   display: flex;
   align-items: center;
-  gap: 16px;
+  gap: 8px;
   filter: grayscale(100%);
 
-  @media screen and (max-width: $mobile) {
-    gap: 8px;
+  @media screen and (min-width: $tablet) {
+    
+    gap: 16px;
+    right: 56px;
+    
   }
+
+
+
 }
 .book-inform {
-  margin-right: 24px;
-  width: 808px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
-  @media screen and (max-width: $tablet) {
-    width: 516px;
-  }
-
-  @media screen and (max-width: $mobile) {
-    margin: 14px;
-  }
 }
 
 .author-shops {
   display: flex;
-  align-items: center;
+  margin-bottom: 0;
   justify-content: space-between;
-  margin-top: 16px;
+  align-items: center;
+
+  
+  
+  
 }
 
-.titlle-basket {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+// .titlle-basket {
+//   display: flex;
+//   align-items: center;
+//   justify-content: space-between;
+// }
 
 .basket-btn {
   position: absolute;
-  top: 24px;
-  right: 24px;
+  top: 14px;
+  right: 14px;
   background-color: $secondary-color;
   border-radius: 50%;
 
@@ -139,6 +146,10 @@ $desktop: 1199.97px;
 
   width: 34px;
   height: 34px;
+  @media screen and (min-width: $tablet) {
+    top: 24px;
+  right: 24px;
+  }
 }
 
 .book-title {
@@ -179,7 +190,7 @@ $desktop: 1199.97px;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.04em;
-  margin-top: 48px;
+ 
 
   color: $subtitle-color;
 
@@ -276,10 +287,10 @@ $mobile: 479.97px;
 
 .book-empty-description {
   width: 349px;
-  @media screen and (max-width: $tablet) {
+
     margin-left: auto;
     margin-right: auto;
-  }
+  
 }
 
 .all-shopping-list {
@@ -288,22 +299,28 @@ $mobile: 479.97px;
 }
 
 .book-empty-img {
-  @media screen and (max-width: $tablet) {
+
     margin-left: auto;
     margin-right: auto;
-  }
+  
   .book-empty-description {
     color: $category-color-lm;
   }
 }
 
-
-
-.support-shopping-list{
-  visibility: visible;
-// margin-top: 112px;
-  @media screen and (max-width: $tablet){
-    visibility: hidden;
-  }
-  
+.support-wrap-container{
+  margin-top: 112px;
+  margin-right: 40px;
 }
+
+// .basket-img{
+//   width: 16px;
+//   height: 16px;
+//   fill:$btn-support-color;
+//   z-index: 9999;
+//   @media screen and (min-width: $tablet) {
+//   width:18px;
+//   height: 18px;
+//   }
+
+// }
