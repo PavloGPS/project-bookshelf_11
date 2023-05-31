@@ -10,7 +10,6 @@ $desktop: 1199.97px;
 
   margin-bottom: 40px;
   margin-top: 112px;
-  
 
   @media screen and (max-width: $tablet) {
     font-size: 32px;
@@ -25,13 +24,10 @@ $desktop: 1199.97px;
   position: relative;
   display: flex;
   flex-direction: row;
-  
-  margin-bottom: 20px;
-  
 
-  
+  margin-bottom: 20px;
+
   padding: 14px;
-  
 
   background: #ffffff;
   border: 2px solid rgba(79, 46, 232, 0.4);
@@ -39,11 +35,9 @@ $desktop: 1199.97px;
 
   @media screen and (min-width: $tablet) {
     padding: 30px 24px;
-    
   }
 
   @media screen and (max-width: $mobile) {
-    
     height: 170px;
   }
 }
@@ -82,8 +76,6 @@ $desktop: 1199.97px;
   letter-spacing: -0.04em;
   text-transform: uppercase;
 
-  
-
   @media screen and (max-width: $mobile) {
     width: 100px;
     height: 145px;
@@ -93,8 +85,8 @@ $desktop: 1199.97px;
 }
 
 .book-shops {
-  position: fixed;
-  
+  position: absolute;
+
   right: 34px;
   display: flex;
   align-items: center;
@@ -102,20 +94,14 @@ $desktop: 1199.97px;
   filter: grayscale(100%);
 
   @media screen and (min-width: $tablet) {
-    
     gap: 16px;
     right: 56px;
-    
   }
-
-
-
 }
 .book-inform {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
 }
 
 .author-shops {
@@ -123,10 +109,6 @@ $desktop: 1199.97px;
   margin-bottom: 0;
   justify-content: space-between;
   align-items: center;
-
-  
-  
-  
 }
 
 // .titlle-basket {
@@ -148,7 +130,7 @@ $desktop: 1199.97px;
   height: 34px;
   @media screen and (min-width: $tablet) {
     top: 24px;
-  right: 24px;
+    right: 24px;
   }
 }
 
@@ -190,7 +172,6 @@ $desktop: 1199.97px;
   font-size: 12px;
   line-height: 14px;
   letter-spacing: -0.04em;
- 
 
   color: $subtitle-color;
 
@@ -288,9 +269,8 @@ $mobile: 479.97px;
 .book-empty-description {
   width: 349px;
 
-    margin-left: auto;
-    margin-right: auto;
-  
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .all-shopping-list {
@@ -299,16 +279,15 @@ $mobile: 479.97px;
 }
 
 .book-empty-img {
+  margin-left: auto;
+  margin-right: auto;
 
-    margin-left: auto;
-    margin-right: auto;
-  
   .book-empty-description {
     color: $category-color-lm;
   }
 }
 
-.support-wrap-container{
+.support-wrap-container {
   margin-top: 112px;
   margin-right: 40px;
 }
